@@ -19,7 +19,7 @@
 #define CONLEN_BUFF		128			// Buffer size for host name
 
 #define SERVER_BACKLOG  100		    // Number of connections allowed 
-#define THREAD_POOL_LEN 70		    // Number of threads allowed 
+#define THREAD_POOL_LEN 128		    // Number of threads allowed 
 
 
 #define SERVER_PORT		3003		// Port number of server
@@ -29,19 +29,16 @@
 
 // Global Variables
 int volatile    running = 1;
-int             client_socket = 0;            // socket descriptor
+int         client_socket = 0;            // socket descriptor
 
 
-pthread_t       thread_pool[THREAD_POOL_LEN];
-int volatile    threads_used = 0;
-int volatile    thread_index = 0;
-int volatile    queue_pointer = 0;
-int             connection_count = 0;
+pthread_t thread_pool[THREAD_POOL_LEN];
+int volatile threads_used = 0;
+int volatile thread_index = 0;
 
 static void sigintHandler(int sig) {
     running = 0;
 
-    
     close(client_socket);
     printf("closed client_socket\n");
     write(STDERR_FILENO, "Caught SIGINT\n", 15);
@@ -56,8 +53,7 @@ int getHostString(char* dest, const char *request) {
     size_t lineLen;
     char temp_buff[HOST_BUFF];
     
-    // set pointer to start at "Host: " line
-    startP = strstr(request, "Host: ");	
+    startP = strstr(request, "Host: ");	// set pointer to start at "Host: " line
 
     if(startP == NULL) {
         perror("no \"Host: \" line detected");
@@ -70,12 +66,13 @@ int getHostString(char* dest, const char *request) {
     endP = strstr(startP, "\n");		// get pointer to new line
 
     // copy line into hostname
-
     lineLen = endP - startP;				// get length of line
+
     if (lineLen + 1 > HOST_BUFF / sizeof(char) || lineLen < 0) {
-        //printf("Linelen: %lu is too long\n\n", lineLen);
+        printf("Linelen: %lu is too long\n\n", lineLen);
         return 0;
     }
+
     strncpy(temp_buff, startP, lineLen);			// copy line from start of line to end into hostname
     temp_buff[lineLen] = '\0';					// add null terminator
     // printf("One line: %s\n\n", hostname);
@@ -103,7 +100,7 @@ int getHostString(char* dest, const char *request) {
     // recopy final string into hostname
     lineLen = endP - startP;					// get length of line
     if (lineLen + 1 > (HOST_BUFF / sizeof(char)) || lineLen < 0) {
-        //printf("Linelen: %lu is too long\n\n", lineLen);
+        printf("Linelen: %lu is too long\n\n", lineLen);
         return 0;
     }
 
@@ -117,7 +114,7 @@ int getHostString(char* dest, const char *request) {
 // Result: creates socket and connection to host
 // returns 1 if successful connection, 0 if failed
 int connect_to_host(const char* host, int *pserver_socket) {
-    //printf("connect_to_host()\n\thost string: %s\n\n", host);
+    printf("connect_to_host()\n\thost string: %s\n\n", host);
 
 	struct addrinfo hints, *result, *rp;
 
@@ -153,7 +150,7 @@ int connect_to_host(const char* host, int *pserver_socket) {
 
         // if connection successful -> break out of loop
         if (connect(server_socket, rp->ai_addr, rp->ai_addrlen) >= 0) {
-            //printf("Server connection: Accepted! server_connection\n");
+            printf("Server connection: Accepted! server_connection\n");
             *pserver_socket = server_socket; 
             break;
         }
@@ -163,7 +160,7 @@ int connect_to_host(const char* host, int *pserver_socket) {
         close(server_socket);
 	}
 
-    //printf("Free addrinfo\n");
+    printf("Free addrinfo\n");
 	freeaddrinfo(result);
 
     // if we reached end of loop without connection
@@ -188,7 +185,7 @@ size_t getConLen(char *response, int *foundConLen) {
     size_t conLen;
 
 	if(startP == NULL) {
-		fprintf(stderr, "no \"Content-Length: \" detected\n");
+		printf("no \"Content-Length: \" detected\n");
         // printf("Response: \n\n%s\n\n", response);
         *foundConLen = 0;
 		return 0;
@@ -206,7 +203,7 @@ size_t getConLen(char *response, int *foundConLen) {
 	int lineLen = endP - startP;				// get length of line
 	// printf("Subtraction: %d\n\n", lineLen);
 	if (lineLen + 1 > sizeof(conLenString) / sizeof(char)) {
-		fprintf(stderr, "linelen: %d is too long\n\n", lineLen);
+		printf("linelen: %d is too long\n\n", lineLen);
         *foundConLen = 0;
 		return 0;
 	}
@@ -224,39 +221,29 @@ size_t getConLen(char *response, int *foundConLen) {
 
 
 // returns 0 if no end found
-size_t bytesToHeaderEnd(char *response, char* response_buffer, int* foundHeaderEnd) {
+size_t bytesToHeaderEnd(char *response) {
     char* startP = response; 
     char* endP;
 
     size_t length = 0;
-    size_t copy_length = 0;
 
     // check for CRLF
     endP = strstr(response, "\r\n\r\n");
     if(endP == NULL) {
-        //printf("NO HEADER END FOUND??? Not Likely, Check code\n");
-        *foundHeaderEnd = 0;
+        printf("NO HEADER END FOUND??? Not Likely, Check code\n");
         return 0;
     }
 
-    *foundHeaderEnd = 1;
-
-    //printf("Found header end\n");
+    printf("Found header end\n");
 
     //print potential header length
     length = endP - startP + 1;
     // printf("length to header end: %lu\n", length);
-    // copy potential header string
-    if(length > RES_BUFF) {
-        copy_length = RES_BUFF;
-    }
-    else {
-        copy_length = length;
-    }
-
-    strncpy(response_buffer, startP, copy_length);
-    response_buffer[copy_length] = '\0';        // add null terminator
-    //printf("Response Header: \n\n%s\n\n", temp);
+    // print potential header string
+    char temp[length];
+    memcpy(temp, startP, length);
+    temp[length] = '\0';        // add null terminator
+    printf("Response Header: \n\n%s\n\n", temp);
 
     // return header length
     return length;
@@ -291,36 +278,24 @@ int containsEndOfStream(char *response) {
     return 1;
 }
 
-int sendDummyResponse(int client_connection, char* res_buff) {
-    size_t      soc_written = 0;                // num bytes written to a socket
-
-    sprintf(res_buff, "HTTP/1.1 500 Internal Server Error\nContent-Type: text/plain\nContent-Length: %d\n\n", 0);
-    soc_written = write(client_connection, res_buff, strlen(res_buff));
-    if (soc_written < 0) {
-        fprintf(stderr, "Error writing to client socket\n");
-    }
-    return soc_written;
-}
-
 void *handle_connection(void *pclient_connection) {
-    int         client_connection = *((int *)pclient_connection);
-    int         server_socket = 0;              // socket descriptor
+    int        client_connection = *((int *)pclient_connection);
 
-    size_t      total_written = 0;              // total bytes written
-    size_t      total_read = 0;
-
-    size_t      soc_readed = 0;                 // num bytes read from a socket
-    size_t      soc_written = 0;                // num bytes written to a socket
-    size_t      content_length = 0;             // content length in defined in response header 
-    size_t      content_readed = 0;             // number of bytes read after response header
+    int        server_socket = 0;            // socket descriptor
 
 	char        net_buff[SOCK_READ_BUFF];       // buffer to hold characters read from socket
 	char        req_buff[REQ_BUFF];				// buffer to hold the request
 	char        res_buff[RES_BUFF];      	    // buffer to hold the response header
 	char        hostname[HOST_BUFF];            // buffer to hold host name
 
+    size_t      soc_readed = 0;                 // num bytes read from a socket
+    size_t      soc_written = 0;                // num bytes written to a socket
+
+    size_t      content_length = 0;             // content length in defined in response header 
+    size_t      content_readed = 0;             // number of bytes read after response header
+
     // Free memory
-    //printf("free pclient_connection\n");
+    printf("free pclient_connection\n");
     free(pclient_connection);
     pclient_connection = NULL;
 
@@ -331,7 +306,7 @@ void *handle_connection(void *pclient_connection) {
     memset(hostname, '\0', sizeof(hostname));
 
     
-    //printf("Handling Client Connection: %d\n\n", client_connection);
+    printf("Handling Client Connection: %d\n\n", client_connection);
 
     /* --------------- Read incoming request ------------------------- */
 
@@ -343,18 +318,15 @@ void *handle_connection(void *pclient_connection) {
         perror("ERROR reading from socket");
         goto closeConnections;
     }
-    size_t reqSize = strlen(net_buff);
+    // strncat(req_buff, net_buff, soc_readed);
 
-    // copy request into req_buff
-    strncat(req_buff, net_buff, sizeof(req_buff));
+    int reqSize = strlen(net_buff);
 
-
-    // // print request
-    // printf("Request Size %d: \nRequest String:%.*s\n", reqSize, reqSize, req_buff);
+    // print request
+    printf("Request Size %d: \nRequest String:%.*s\n", reqSize, reqSize, net_buff);
 
     if(reqSize == 0) {
-        soc_written = sendDummyResponse(client_connection, res_buff);
-        goto closeConnections;
+        goto sendDummyResponse;
     }
 
     /* --------------- Only accept GET requests -------------------- */
@@ -368,10 +340,11 @@ void *handle_connection(void *pclient_connection) {
 
 
     int foundHostName = getHostString(hostname, net_buff);
-    if (!foundHostName) {       // if we didn't get a hostname string -> send dummy response
-        fprintf(stderr, "Error: Could not get host name from request\n\n");
-        soc_written = sendDummyResponse(client_connection, res_buff);
-        goto closeConnections;
+
+    // if we didn't get a hostname string
+    if (!foundHostName) {
+        perror("Error: Could not get host name from request\n\n");
+        goto sendDummyResponse;
     }
 
     // if we sucessfully found a hostname string
@@ -379,15 +352,14 @@ void *handle_connection(void *pclient_connection) {
 
     /* --------------- Connect to Server -------------------- */
     int connectedToHost = connect_to_host(hostname, &server_socket);
-    if(!connectedToHost) {      // if we couldn't connect to server -> send dummy response
-        fprintf(stderr, "connection error: %d\n", connectedToHost);
-        soc_written = sendDummyResponse(client_connection, res_buff);
-        goto closeConnections;
+    if(!connectedToHost) {
+        printf("connection error: %d", connectedToHost);
+        goto sendDummyResponse;
     }
 
     /* ------------------- Forward request to server ---------------- */        
     soc_written = write(server_socket, net_buff, strlen(net_buff));
-    //printf("Wrote %lu chars to server connection\n\n", soc_written);
+    printf("Wrote %lu chars to server connection\n\n", soc_written);
     
 
     /* ------------------- Receive response from server ---------------- */
@@ -397,39 +369,124 @@ void *handle_connection(void *pclient_connection) {
 
     size_t potentialConLen = 0;             // temp int for storing potential content length
     size_t potentialBytestoHeaderEnd = 0;   // temp int for storing potential bytes after header
-    size_t headerSize = 0;   // header size
+
     size_t total_response_read = 0;         
     soc_readed = 0;
     soc_written = 0;
-
-    int response_code_found = 0;
 
     int responseDone = 0;
     
     /* ------------------- Send Response from Server to Client -----------------*/
     //  Keep reading from server and sending to client until:
-    //      if Chunked Encodeing 
-    //          if we found the end of the response header
+    //      -> if Chunked Encodeing 
+    //          -> if we found the end of the response header
     //              -> stop when end of stream token is found
-    //      if "Content-Length: " is found in HTTP response header
-    //          if data delivered after header >= content-length
+    //       -> if Content-Length: in HTTP response header
+    //          -> if data delivered after header >= content-length
     //              -> stop
     do {
         memset(net_buff, 0, sizeof(net_buff));  // clear net_buff
 
         // read from socket
         soc_readed = read(server_socket, net_buff, sizeof(net_buff)); 
-        if (soc_readed < 0) {   // check read error
+        // check read error
+        if (soc_readed < 0) {
             perror("ERROR reading from socket\n"); // if read returns < -1 then error
             break;
         }
-        if(soc_readed == 0) { // if readed is 0 -> break
+        // if readed is 0 -> break
+        if(soc_readed == 0) {
             break;
         }  
 
         // printf("%lu read from server\n", soc_readed);
         total_response_read += soc_readed;
 
+        // Find Content-Length: 
+        //  if we haven't found Content Length:
+        //      -> then try to find it and flag
+        if(!foundConLen) {            
+            potentialConLen = getConLen(net_buff, &foundConLen);
+            if(potentialConLen > 0) {
+                // update content_length
+                content_length = potentialConLen;
+                printf("Content Len updated to: %lu\n", content_length);   
+                foundConLen = 1;
+                foundChunkedEncoding = 0;           // I REALIZE NOW THAT CONTENT-LENGTH MAY NOT BE PRESENT IN CASES OTHER THAN CHUNKED ENCODING
+            }
+        }
+        
+        // If Chunked Encoding  or we didn't find Con Len
+        //  -> look out for end of stream token
+        if (!foundConLen) {
+            if(!foundHeaderEnd) {
+                // when bytes 
+                potentialBytestoHeaderEnd = bytesToHeaderEnd(net_buff);
+                if(potentialBytestoHeaderEnd >= 0) {
+                    foundHeaderEnd = 1;
+
+                    // if end of stream in same buffer as header end -> end response
+                    char *afterHeader = strstr(net_buff, "\r\n\r\n");
+                    afterHeader += strlen("\r\n\r\n");
+                    if(containsEndOfStream(afterHeader)) {
+                        printf("Warning: end of stream token in same buffer as header end. Small file or 404?\n");
+                        responseDone = 1;
+                    }
+
+                    // if response code is not 200 -> response done
+                    char *firstLine = strstr(net_buff, "\n");
+                    char *firstTwoHundred = strstr(net_buff, "200");
+
+                    if (firstTwoHundred == NULL || firstTwoHundred >= firstLine) {
+                        printf("Non-200 Response Detected\n");
+                        responseDone = 1;
+                    }
+                }
+            }
+            // if we found the header end already then the next \r\n\r\n token is the end of the chunk and we can stop
+            else {
+                if(containsEndOfStream(net_buff)) {
+                    responseDone = 1;
+                }
+            }
+            
+        }
+
+        // If Content-Length 
+        //  -> keep track of bytes after header
+        else if(foundConLen) {
+
+            // if we haven't found the header already
+            // -> try to find it, if found add to content_readed. Don't add to content readed if header isn't done 
+            if(!foundHeaderEnd) {
+                potentialBytestoHeaderEnd = bytesToHeaderEnd(net_buff);
+                if(potentialBytestoHeaderEnd >= 0) {
+
+                    // printf("contentreaded before: %lu\n", content_readed);
+                    // printf("soc readed rn: %lu\n", soc_readed);
+                    // printf("potentialBytes to header end: %lu\n", potentialBytestoHeaderEnd);
+                    // printf("Bytes before header: %lu\n", potentialBytestoHeaderEnd);
+
+                    content_readed += content_readed + soc_readed - potentialBytestoHeaderEnd;
+
+                    foundHeaderEnd = 1;
+                }
+            }
+            // if we found the header -> update content_readed
+            else {
+                content_readed += soc_readed;
+            }
+
+            // printf("contentreaded: %lu\n", content_readed);
+
+
+            // if we read all the content we need to -> last loop
+            if(content_readed >= content_length) {
+                responseDone = 1;
+            }
+
+        }
+        
         // --------------------- Send response to client -----------------
         // send response from server
         soc_written = write(client_connection, net_buff, soc_readed);
@@ -438,127 +495,34 @@ void *handle_connection(void *pclient_connection) {
         }
         // printf("%lu written to client\n", soc_written);
 
-        // Try to find response code
-        if(!response_code_found) {
-            // if response code is not 200 -> response done
-            char *firstLine = strstr(net_buff, "\n");
-            char *firstTwoHundred = strstr(net_buff, "200");
-
-            if (firstTwoHundred == NULL || firstTwoHundred >= firstLine) {
-                printf("Non-200 Response Detected\n");
-                responseDone = 1;
-            }
-            else {
-                response_code_found = 1;
-            }
-        }
-
-        // Try to find "Content-Length"
-        if(!foundConLen && !foundHeaderEnd) {            
-            potentialConLen = getConLen(net_buff, &foundConLen);
-            if(foundConLen) {
-                // update content_length
-                content_length = potentialConLen;
-                // printf("Content Len is: %lu\n", content_length);   
-                //foundConLen = 1;
-            }
-        }
-
-        // Try to find header end, look out for end of stream after header
-        if(!foundHeaderEnd) { 
-            potentialBytestoHeaderEnd = bytesToHeaderEnd(net_buff, res_buff, &foundHeaderEnd);
-            // if we just found header end  
-            //  -> check for end of stream marker after header
-            //  if end of stream is present after header
-            //      -> break
-            //  update content_readed
-            //  continue
-            if(foundHeaderEnd) {
-                // if end of stream in same buffer as header end -> end response
-                char *afterHeader = strstr(net_buff, "\r\n\r\n");
-                afterHeader += strlen("\r\n\r\n");
-                if(containsEndOfStream(afterHeader)) {
-                    //printf("Warning: end of stream token in same buffer as header end. Small file or 404?\n");
-                    responseDone = 1;
-                    break;
-                }
-
-
-                // content_readed is size of the message read - part of the message that is the header
-                content_readed = soc_readed - potentialBytestoHeaderEnd;
-                headerSize += potentialBytestoHeaderEnd;
-
-                // if content length hit -> break
-                if(foundConLen) {
-                    // if we read all the content we need to -> last loop
-                    if(content_readed >= content_length) {
-                        responseDone = 1;
-                        break;
-                    }
-                }
-                
-                // we continue since we don't want to double count content_readed nor do we want to end if EOS is present in net_buff
-                continue;
-            }
-            else {
-                headerSize += soc_readed;
-            }
-        }
-
-        // If we didn't find Con Len
-        //  -> look out for end of stream token
-        if (!foundConLen && foundHeaderEnd) {
-            if(containsEndOfStream(net_buff)) {
-                responseDone = 1;
-                break;
-            }
-        }
-        // If Content-Length 
-        //  -> keep track of bytes after header
-        else if(foundConLen){
-            
-            // if we found the header -> update content_readed
-            if(foundHeaderEnd) {
-                content_readed += soc_readed;
-                // printf("hi %lu\n", content_readed);
-            }
-
-            // printf("contentreaded: %lu\n", content_readed);
-
-            // if we read all the content we need to -> last loop
-            if(content_readed >= content_length) {
-                responseDone = 1;
-            }
-
-        }
-         
+        
+        
     } while(!responseDone);
     
 
-    // printf("Response Total Length: %lu\n", total_response_read);
-    // printf("Content Read: %lu\n\n", content_readed);
+    printf("Response Total Length: %lu\n", total_response_read);
+    printf("Content Read: %lu\n\n", content_readed);
 
     if(foundConLen) {
-        // printf("Content Length: %lu\n", content_length);
+        printf("Content Length: %lu\n", content_length);
     }
     
-    printf("Request");
-    if(foundConLen) {
-        printf(" (Content-Length: %lu):\n", content_length);
-    }
-    else {
-        printf(":\n");
-    }
-    
-    printf("%s\n", req_buff);
 
-    printf("Response (Content Read: %lu):\n", content_readed - 3);
+    // if everything was sucessful:
+    goto closeConnections;
 
-    printf("%s\n\n", res_buff);
-    
+    // if connection to server fails -> send dummy response to client
+    sendDummyResponse:    
+    // send dummy response to client
+    sprintf(res_buff, "HTTP/1.1 500 Internal Server Error\nContent-Type: text/plain\nContent-Length: %d\n\n", 0);
+    soc_written = write(client_connection, res_buff, strlen(res_buff));
+    if (soc_written < 0) {
+        perror("Error writing to client socket\n");
+    }
     
     // close connections
     closeConnections:
+    // close connections
     close(server_socket);
     shutdown (client_connection, SHUT_RDWR);
     close (client_connection);
@@ -570,10 +534,11 @@ void *handle_connection(void *pclient_connection) {
 
 int main() {
     // Socket descriptors
-    int        client_connection = 0;           // new connection descriptor
+    int        client_connection = 0;        // new connection descriptor
 
 	struct     sockaddr_in client_addr;         // Address format structure
 	// struct hostent *hostentry;
+
 
 	int         addrlen = sizeof(client_addr);  // size of sockaddr_in structure
 
@@ -593,7 +558,7 @@ int main() {
     }
     
     // To prevent "Address in use" error
-    // The SO_REUSEADDR socket option, explicitly allows a process to bind to a port which remains in TIME_WAIT
+    // The SO_REUSEADDR socket option, which explicitly allows a process to bind to a port which remains in TIME_WAIT
     if (setsockopt(client_socket, SOL_SOCKET, SO_REUSEADDR, &(int){1}, sizeof(int)) < 0)
         perror("setsockopt(SO_REUSEADDR) failed!");
 	
@@ -618,11 +583,16 @@ int main() {
     }
 
 	
-    printf("Listening...\n");
-
 	int connection_count = 0;
 	while(running) {
  
+        printf("Listening...\n");
+        if(threads_used >= THREAD_POOL_LEN) {
+            printf("hit thread pool len limit %d\n", threads_used);
+            pthread_join(thread_pool[threads_used - 1], NULL);
+            printf("joined thread index %d\n", threads_used - 1);
+            --threads_used;
+        }
 
 		/* --------------- Accept incoming connections -------------------- */
 		client_connection = accept(client_socket, (struct sockaddr*)&client_addr, (socklen_t*)&addrlen);
@@ -630,7 +600,7 @@ int main() {
 			perror("ERROR: connection not accepted");
 		}
 
-		// printf("Client connection: Accepted! client_connection: %d\n\n", client_connection);
+		printf("Client connection: Accepted! client_connection: %d\n\n", client_connection);
 
 		pthread_t t;
 
@@ -643,25 +613,16 @@ int main() {
 
         // handle connection in new thread
         pthread_create(&t, NULL, handle_connection, pclient);
-        thread_pool[queue_pointer] = t;
-        queue_pointer = (queue_pointer + 1) % THREAD_POOL_LEN;
-
+        thread_pool[threads_used] = t;
+        ++threads_used;
 
         ++connection_count;
-        if(connection_count >= THREAD_POOL_LEN) {
-            // printf("\nJoining thread %d\n", queue_pointer);
-            pthread_join(thread_pool[queue_pointer], NULL);
-        }
-
 	}
 
-    printf("\n%d connections serviced\n", connection_count);
+    printf("%d connections serviced\n", connection_count);
     
-    threads_used = (connection_count >= THREAD_POOL_LEN) ? THREAD_POOL_LEN 
-                : connection_count;
-
-    for(int i = 0; i < threads_used; i++) {
-        printf("Joined thread %d; ", i);
+    for(int i = 0; i <= threads_used; i++) {
+        printf("joined thread %d\n", i);
         pthread_join(thread_pool[i], NULL);
     }
     close (client_socket);
