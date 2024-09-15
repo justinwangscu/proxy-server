@@ -620,7 +620,6 @@ int main() {
 	
     printf("Listening...\n");
 
-	int connection_count = 0;
 	while(running) {
  
 
