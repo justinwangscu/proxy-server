@@ -1,3 +1,6 @@
 
 proxy
 proxyog
+/misc
+*.o
+ps

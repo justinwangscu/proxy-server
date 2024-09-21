@@ -51,7 +51,7 @@ static void sigintHandler(int sig) {
 // puts host string into dest, reads from request
 // INPUT: dest should be size HOST_BUFF, request is buffer holding http request
 // 0 = couldn't find host string, 1 = found host string
-int getHostString(char* dest, const char *request) {
+int get_host_string(char* dest, const char *request) {
     char *startP, *endP, *colonP;
     size_t lineLen;
     char temp_buff[HOST_BUFF];
@@ -177,7 +177,7 @@ int connect_to_host(const char* host, int *pserver_socket) {
 
 // sets foundConLen to 0 if Content-Length header not found, to 1 if found
 // returns contentLength if found, returns 0 if not found
-size_t getConLen(char *response, int *foundConLen) {
+size_t get_content_length(char *response, int *foundConLen) {
     char        conLenString[CONLEN_BUFF];      // buffer to hold Content-Length String
 
 	// printf("response: \" %s\n\n", response);
@@ -224,7 +224,7 @@ size_t getConLen(char *response, int *foundConLen) {
 
 
 // returns 0 if no end found
-size_t bytesToHeaderEnd(char *response, char* response_buffer, int* foundHeaderEnd) {
+size_t bytes_to_header_end(char *response, char* response_buffer, int* foundHeaderEnd) {
     char* startP = response; 
     char* endP;
 
@@ -263,7 +263,7 @@ size_t bytesToHeaderEnd(char *response, char* response_buffer, int* foundHeaderE
 }
 
 // returns 0 if not found, 1 if found
-int chunkedEncodingCheck(char* response) {
+int chunked_encoding_check(char* response) {
     char* startP = strstr(response, "Transfer-Encoding: chunked");
     if (startP == NULL) return 0;
 
@@ -274,7 +274,7 @@ int chunkedEncodingCheck(char* response) {
 // used to detect end of chunked encoding stream 
 // only call after detecting response header end
 // returns 0 if not found, 1 if found
-int containsEndOfStream(char *response) {
+int contains_end_of_stream(char *response) {
     char* startP = response; 
     char* endP = response;
 
@@ -367,7 +367,7 @@ void *handle_connection(void *pclient_connection) {
     /* --------------- Get hostname string in request -------------------- */
 
 
-    int foundHostName = getHostString(hostname, net_buff);
+    int foundHostName = get_host_string(hostname, net_buff);
     if (!foundHostName) {       // if we didn't get a hostname string -> send dummy response
         fprintf(stderr, "Error: Could not get host name from request\n\n");
         soc_written = sendDummyResponse(client_connection, res_buff);
@@ -455,7 +455,7 @@ void *handle_connection(void *pclient_connection) {
 
         // Try to find "Content-Length"
         if(!foundConLen && !foundHeaderEnd) {            
-            potentialConLen = getConLen(net_buff, &foundConLen);
+            potentialConLen = get_content_length(net_buff, &foundConLen);
             if(foundConLen) {
                 // update content_length
                 content_length = potentialConLen;
@@ -466,7 +466,7 @@ void *handle_connection(void *pclient_connection) {
 
         // Try to find header end, look out for end of stream after header
         if(!foundHeaderEnd) { 
-            potentialBytestoHeaderEnd = bytesToHeaderEnd(net_buff, res_buff, &foundHeaderEnd);
+            potentialBytestoHeaderEnd = bytes_to_header_end(net_buff, res_buff, &foundHeaderEnd);
             // if we just found header end  
             //  -> check for end of stream marker after header
             //  if end of stream is present after header
@@ -477,7 +477,7 @@ void *handle_connection(void *pclient_connection) {
                 // if end of stream in same buffer as header end -> end response
                 char *afterHeader = strstr(net_buff, "\r\n\r\n");
                 afterHeader += strlen("\r\n\r\n");
-                if(containsEndOfStream(afterHeader)) {
+                if(contains_end_of_stream(afterHeader)) {
                     //printf("Warning: end of stream token in same buffer as header end. Small file or 404?\n");
                     responseDone = 1;
                     break;
@@ -508,7 +508,7 @@ void *handle_connection(void *pclient_connection) {
         // If we didn't find Con Len
         //  -> look out for end of stream token
         if (!foundConLen && foundHeaderEnd) {
-            if(containsEndOfStream(net_buff)) {
+            if(contains_end_of_stream(net_buff)) {
                 responseDone = 1;
                 break;
             }
