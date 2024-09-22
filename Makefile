@@ -1,5 +1,5 @@
 CXX			= gcc
-CXXFLAGS	= -g -Wall
+CXXFLAGS	= -g -Wall -pthread
 OBJS		= proxy.o
 PROG		= ps
 

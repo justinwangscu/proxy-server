@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,6 +13,11 @@
 #include <sys/types.h>
 #include <sys/stat.h> // to get file size
 #include <pthread.h>
+
+#include <sys/stat.h>
+#include <time.h>
+#include <dirent.h>
+
 
 #define SOCK_READ_BUFF  8192		// Size of the buffer used to store the bytes read over socket
 #define REQ_BUFF		8192		// Size of the buffer used to store requests from browser
@@ -27,6 +34,24 @@
 
 #define MAXLINE 		10
 
+typedef struct {
+    int valid;
+} DateTime;
+
+typedef struct {
+    int     etag;
+    char*   url;
+    char*   modified_since;
+} CachedFile;
+
+
+typedef struct {
+    int*    hash_array;
+    int     total;
+}  IDList;
+
+
+
 // Global Variables
 int volatile    running = 1;
 int             client_socket = 0;  // socket descriptor
@@ -39,16 +64,99 @@ int volatile    threads_used = 0;
 int volatile    thread_index = 0;
 int volatile    queue_index = 0;
 
+IDList cached_files;
+
+
+
 static void sigintHandler(int sig) {
     running = 0;
 
     
     close(client_socket);
-    threads_used = (connection_count >= THREAD_POOL_LEN) ? THREAD_POOL_LEN 
-                : connection_count;
-
+    
     printf("closed client_socket\n");
     write(STDERR_FILENO, "Caught SIGINT\n", 15);
+}
+
+char* sanitize_string(char* output, const char* input) {
+    int i;
+    int len = strlen(input);
+    for(i = 0; i < len; i++) {
+        char b = input[i];
+        // windows and linux/unix forbidden ASCII characters
+        if(b=='\\' || b=='/' || b=='<' || b=='>' || b==':' || b=='\"' || b=='|' || b=='?' || b=='*' || b<=31) {
+            b = '-';
+        }
+        output[i] = b;
+    }
+    return output;
+}
+
+
+int get_url(char* dest, const char *request) {
+    char *startP, *endP, *colonP;
+    size_t lineLen;
+    char temp_buff[HOST_BUFF];
+    
+    // set pointer to start at "Host: " line
+    startP = strstr(request, "GET ");	
+
+    if(startP == NULL) {
+        perror("no \"GET\" detected");
+        return 0;
+    }
+    
+    // set start after "GET "
+    startP += strlen("GET ");	
+    // set end at next space
+    endP = strstr(startP, " ");		
+
+    // copy line into hostname
+    lineLen = endP - startP;				// get length of line
+    if (lineLen + 1 > HOST_BUFF / sizeof(char) || lineLen < 0) {
+        //printf("Linelen: %lu is too long\n\n", lineLen);
+        return 0;
+    }
+    strncpy(temp_buff, startP, lineLen);		// copy line from start of line to end into hostname
+    temp_buff[lineLen] = '\0';					// add null terminator
+    // printf("One line: %s\n\n", hostname);
+
+    // set start pointer to beginning of temp
+    startP = temp_buff;
+    // set end pointer to end of temp 
+    endP = &temp_buff[lineLen - 1];
+
+    // if url starts with http: skip after it
+    int containsHttp = strncmp(temp_buff, "http:", strlen("http:"));
+    if(containsHttp == 0) {     // if starts with http
+        startP = strstr(temp_buff, "//");
+        startP += strlen("//");
+        // printf("After \"//\": %s\n\n", startP);
+    }
+
+    // recopy final string into hostname
+    lineLen = endP - startP;					// get length of line
+    if (lineLen + 1 > (HOST_BUFF / sizeof(char)) || lineLen < 0) {
+        //printf("Linelen: %lu is too long\n\n", lineLen);
+        return 0;
+    }
+
+    strncpy(dest, startP, lineLen);			// copy from start to end into hostname
+    dest[lineLen] = '\0';				    // add null terminator
+
+    return 1;
+}
+
+int send_dummy_response(int client_connection) {
+    size_t      soc_written = 0;                // num bytes written to a socket
+    char res_buff [RES_BUFF];
+
+    sprintf(res_buff, "HTTP/1.1 500 Internal Server Error\nContent-Type: text/plain\nContent-Length: %d\n\n", 0);
+    soc_written = write(client_connection, res_buff, strlen(res_buff));
+    if (soc_written < 0) {
+        fprintf(stderr, "Error writing to client socket\n");
+    }
+    return soc_written;
 }
 
 
@@ -120,8 +228,8 @@ int get_host_string(char* dest, const char *request) {
 // Input: pointer dest is passed by reference
 // Result: creates socket and connection to host
 // returns 1 if successful connection, 0 if failed
-int connect_to_host(const char* host, int *pserver_socket) {
-    //printf("connect_to_host()\n\thost string: %s\n\n", host);
+int connect_using_hostname(const char* host, int *pserver_socket) {
+    //printf("connect_using_hostname()\n\thost string: %s\n\n", host);
 
 	struct addrinfo hints, *result, *rp;
 
@@ -178,6 +286,32 @@ int connect_to_host(const char* host, int *pserver_socket) {
 
     return 1;
 }
+
+int connect_to_host(int* server_socket, const char* net_buff) {
+    char    hostname[HOST_BUFF];            // buffer to hold host name
+
+    /* --------------- Get hostname string in request -------------------- */
+
+    int foundHostName = get_host_string(hostname, net_buff);
+    if (!foundHostName) {       // if we didn't get a hostname string -> send dummy response
+        fprintf(stderr, "Error: Could not get host name from request\n\n");
+        return 0;
+    }
+
+    // if we sucessfully found a hostname string
+
+    /* --------------- Connect to Server -------------------- */
+    int connectedToHost = connect_using_hostname(hostname, server_socket);
+    if(!connectedToHost) {      // if we couldn't connect to server -> send dummy response
+        fprintf(stderr, "connection error: %d\n", connectedToHost);
+        return 0;
+    }
+
+    return 1;
+
+}
+
+
 
 // sets foundConLen to 0 if Content-Length header not found, to 1 if found
 // returns contentLength if found, returns 0 if not found
@@ -295,16 +429,6 @@ int contains_end_of_stream(char *response) {
     return 1;
 }
 
-int send_dummy_response(int client_connection, char* res_buff) {
-    size_t      soc_written = 0;                // num bytes written to a socket
-
-    sprintf(res_buff, "HTTP/1.1 500 Internal Server Error\nContent-Type: text/plain\nContent-Length: %d\n\n", 0);
-    soc_written = write(client_connection, res_buff, strlen(res_buff));
-    if (soc_written < 0) {
-        fprintf(stderr, "Error writing to client socket\n");
-    }
-    return soc_written;
-}
 
 void *handle_connection(void *pclient_connection) {
     int         client_connection = *((int *)pclient_connection);
@@ -328,7 +452,7 @@ void *handle_connection(void *pclient_connection) {
     free(pclient_connection);
     pclient_connection = NULL;
 
-    // clear buffers
+    // set buffers with null terminators
     memset(net_buff, '\0', sizeof(net_buff));
     memset(req_buff, '\0', sizeof(req_buff));
     memset(res_buff, '\0', sizeof(res_buff));
@@ -338,8 +462,6 @@ void *handle_connection(void *pclient_connection) {
     //printf("Handling Client Connection: %d\n\n", client_connection);
 
     /* --------------- Read incoming request ------------------------- */
-
-    
     
     // read from socket
     soc_readed = read(client_connection, net_buff, sizeof(net_buff));
@@ -357,37 +479,53 @@ void *handle_connection(void *pclient_connection) {
     // printf("Request Size %d: \nRequest String:%.*s\n", reqSize, reqSize, req_buff);
 
     if(reqSize == 0) {
-        soc_written = send_dummy_response(client_connection, res_buff);
+        soc_written = send_dummy_response(client_connection);
         goto closeConnections;
     }
 
-    /* --------------- Only accept GET requests -------------------- */
+    /* --------------- Check for Cache Hits -------------------- */
     
-    // if(strncmp("GET", net_buff, strlen("GET")) != 0) {
-    //     printf("Only GET requests accepted, sending dummy response\n");
-    //     goto send_dummy_response;
+    // if(strncmp("GET", net_buff, strlen("GET")) == 0) {
+    //     char url[HOST_BUFF];
+    //     get_url(url, net_buff);
+    //     if(check_cache(url) == 1) {
+    //         send_modified_get();
+
+    //         // Read response
+
+    //         // if response is not 200:
+    //         if(!response_is_200()) {
+    //             send_cached_file(url);
+    //         }
+
+    //     }
     // }
 
     /* --------------- Get hostname string in request -------------------- */
 
-
-    int foundHostName = get_host_string(hostname, net_buff);
-    if (!foundHostName) {       // if we didn't get a hostname string -> send dummy response
-        fprintf(stderr, "Error: Could not get host name from request\n\n");
-        soc_written = send_dummy_response(client_connection, res_buff);
+    int foundHost = connect_to_host(&server_socket, net_buff);
+    if(!foundHost) {
+        soc_written = send_dummy_response(client_connection);
         goto closeConnections;
     }
+    
+    // int foundHostName = get_host_string(hostname, net_buff);
+    // if (!foundHostName) {       // if we didn't get a hostname string -> send dummy response
+    //     fprintf(stderr, "Error: Could not get host name from request\n\n");
+    //     soc_written = send_dummy_response(client_connection);
+    //     goto closeConnections;
+    // }
 
-    // if we sucessfully found a hostname string
+    // // if we sucessfully found a hostname string
     
 
-    /* --------------- Connect to Server -------------------- */
-    int connectedToHost = connect_to_host(hostname, &server_socket);
-    if(!connectedToHost) {      // if we couldn't connect to server -> send dummy response
-        fprintf(stderr, "connection error: %d\n", connectedToHost);
-        soc_written = send_dummy_response(client_connection, res_buff);
-        goto closeConnections;
-    }
+    // /* --------------- Connect to Server -------------------- */
+    // int connectedToHost = connect_using_hostname(hostname, &server_socket);
+    // if(!connectedToHost) {      // if we couldn't connect to server -> send dummy response
+    //     fprintf(stderr, "connection error: %d\n", connectedToHost);
+    //     soc_written = send_dummy_response(client_connection, res_buff);
+    //     goto closeConnections;
+    // }
 
     /* ------------------- Forward request to server ---------------- */        
     soc_written = write(server_socket, net_buff, strlen(net_buff));
