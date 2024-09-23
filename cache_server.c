@@ -50,6 +50,10 @@ typedef struct {
     int     total;
 }  IDList;
 
+typedef struct {
+    int     ;
+    int     total;
+}  responseFlags;
 
 
 // Global Variables
@@ -483,24 +487,6 @@ void *handle_connection(void *pclient_connection) {
         goto closeConnections;
     }
 
-    /* --------------- Check for Cache Hits -------------------- */
-    
-    // if(strncmp("GET", net_buff, strlen("GET")) == 0) {
-    //     char url[HOST_BUFF];
-    //     get_url(url, net_buff);
-    //     if(check_cache(url) == 1) {
-    //         send_modified_get();
-
-    //         // Read response
-
-    //         // if response is not 200:
-    //         if(!response_is_200()) {
-    //             send_cached_file(url);
-    //         }
-
-    //     }
-    // }
-
     /* --------------- Get hostname string in request -------------------- */
 
     int foundHost = connect_to_host(&server_socket, net_buff);
@@ -508,30 +494,43 @@ void *handle_connection(void *pclient_connection) {
         soc_written = send_dummy_response(client_connection);
         goto closeConnections;
     }
+
+    /* --------------- Check for Cache Hits -------------------- */
     
-    // int foundHostName = get_host_string(hostname, net_buff);
-    // if (!foundHostName) {       // if we didn't get a hostname string -> send dummy response
-    //     fprintf(stderr, "Error: Could not get host name from request\n\n");
-    //     soc_written = send_dummy_response(client_connection);
-    //     goto closeConnections;
-    // }
+    // if(strncmp("GET", net_buff, strlen("GET")) == 0) {
+    //     char url[HOST_BUFF];
+    //     get_url(url, net_buff);
+    //     // if item is in the cache 
+    //     if(check_cache(url)) {
+    //         send_modified_get(server_socket, net_buff);
 
-    // // if we sucessfully found a hostname string
+    //         // Read response
+    //         int is200 = check_response_code(server_socket, net_buff);
+    //         
+    //         // if response is not 200:
+    //         if(!is200) {
+    //             send_cached_file(url, client_connection);
+    //         }
+    //         else {
+    //              // forward original request
+    //              // only cache if applicable
+    //              read_cache_send_response();
+    //         } 
+
+    //     }
+    // }
     
 
-    // /* --------------- Connect to Server -------------------- */
-    // int connectedToHost = connect_using_hostname(hostname, &server_socket);
-    // if(!connectedToHost) {      // if we couldn't connect to server -> send dummy response
-    //     fprintf(stderr, "connection error: %d\n", connectedToHost);
-    //     soc_written = send_dummy_response(client_connection, res_buff);
-    //     goto closeConnections;
-    // }
-
+    
     /* ------------------- Forward request to server ---------------- */        
-    soc_written = write(server_socket, net_buff, strlen(net_buff));
+    soc_written = write(server_socket, req_buff, strlen(req_buff));
     //printf("Wrote %lu chars to server connection\n\n", soc_written);
     
 
+    // TODO: wrap all of this into a function and split it into read and send header and read and send the body
+    // check for Cache-Control: no-cache
+    // store response body in cache if cacheable
+    // 
     /* ------------------- Receive response from server ---------------- */
     int foundConLen = 0;            // flag = 1 when we found content-length in response header
     int foundChunkedEncoding = 0;   // flag = 1 when we found chuncked encoding in response header
