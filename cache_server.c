@@ -1,4 +1,8 @@
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
+
+// some peculiarities:
+// if important information in the headers are cut off at the end of net_buff buffer, then it may not be parsed correctly.
+// for example if the buffer ended with "Content-Length: 1" it would be read as 1. But the next buffer may start with "000000000000\n" and it would be ignored.
+// there are cases when servers do not respond to the If-Modified-Since Header. To ensure expected behavior we will check the response header for "Last-Modified" and compare them ourselves
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,14 +23,19 @@
 #include <dirent.h>
 
 
-#define SOCK_READ_BUFF  8192		// Size of the buffer used to store the bytes read over socket
+#define SOCK_READ_BUFF  8192		// Size of the buffer used to store the bytes read over socket (make this big or else bugs)
+#define FILE_READ_BUFF  8192		// Size of the buffer used to store the bytes read from file
+
 #define REQ_BUFF		8192		// Size of the buffer used to store requests from browser
 #define RES_BUFF      	8192        // Size of the buffer used to store response to/from server
-#define HOST_BUFF		64			// Buffer size for host name
+#define HOST_BUFF		64			// Buffer size for host name 
 #define CONLEN_BUFF		128			// Buffer size for host name
+#define URL_BUFF        200
+#define GENERAL_BUFF    100
+#define FILEPATH_MAX    500
 
 #define SERVER_BACKLOG  100		    // Number of connections allowed 
-#define THREAD_POOL_LEN 70		    // Number of threads allowed 
+#define THREAD_POOL_LEN 1		    // Number of threads allowed 
 
 
 #define SERVER_PORT		3003		// Port number of server
@@ -34,26 +43,7 @@
 
 #define MAXLINE 		10
 
-typedef struct {
-    int valid;
-} DateTime;
-
-typedef struct {
-    int     etag;
-    char*   url;
-    char*   modified_since;
-} CachedFile;
-
-
-typedef struct {
-    int*    hash_array;
-    int     total;
-}  IDList;
-
-typedef struct {
-    int     ;
-    int     total;
-}  responseFlags;
+#define CACHE_DIR       "cachedfiles/"
 
 
 // Global Variables
@@ -68,9 +58,6 @@ int volatile    threads_used = 0;
 int volatile    thread_index = 0;
 int volatile    queue_index = 0;
 
-IDList cached_files;
-
-
 
 static void sigintHandler(int sig) {
     running = 0;
@@ -82,27 +69,27 @@ static void sigintHandler(int sig) {
     write(STDERR_FILENO, "Caught SIGINT\n", 15);
 }
 
-char* sanitize_string(char* output, const char* input) {
+void sanitize_url(char* input) {
     int i;
-    int len = strlen(input);
+    int len = strnlen(input, URL_BUFF);
     for(i = 0; i < len; i++) {
         char b = input[i];
         // windows and linux/unix forbidden ASCII characters
         if(b=='\\' || b=='/' || b=='<' || b=='>' || b==':' || b=='\"' || b=='|' || b=='?' || b=='*' || b<=31) {
             b = '-';
         }
-        output[i] = b;
+        input[i] = b;
     }
-    return output;
+    return;
 }
 
 
-int get_url(char* dest, const char *request) {
-    char *startP, *endP, *colonP;
+int get_url(char* dest, const char* const request) {
+    char *startP, *endP;
     size_t lineLen;
-    char temp_buff[HOST_BUFF];
+    char temp_buff[URL_BUFF] = {0};
     
-    // set pointer to start at "Host: " line
+    // set pointer to start at "GET "
     startP = strstr(request, "GET ");	
 
     if(startP == NULL) {
@@ -112,17 +99,17 @@ int get_url(char* dest, const char *request) {
     
     // set start after "GET "
     startP += strlen("GET ");	
-    // set end at next space
+    // set end before next space
     endP = strstr(startP, " ");		
 
     // copy line into hostname
     lineLen = endP - startP;				// get length of line
-    if (lineLen + 1 > HOST_BUFF / sizeof(char) || lineLen < 0) {
+    if ((lineLen + 1 > URL_BUFF / sizeof(char)) || lineLen < 0) {
         //printf("Linelen: %lu is too long\n\n", lineLen);
         return 0;
     }
     strncpy(temp_buff, startP, lineLen);		// copy line from start of line to end into hostname
-    temp_buff[lineLen] = '\0';					// add null terminator
+    // temp_buff[lineLen] = '\0';					// add null terminator 
     // printf("One line: %s\n\n", hostname);
 
     // set start pointer to beginning of temp
@@ -139,26 +126,28 @@ int get_url(char* dest, const char *request) {
     }
 
     // recopy final string into hostname
-    lineLen = endP - startP;					// get length of line
+    lineLen = endP - startP + 1;					// get length of line
     if (lineLen + 1 > (HOST_BUFF / sizeof(char)) || lineLen < 0) {
         //printf("Linelen: %lu is too long\n\n", lineLen);
         return 0;
     }
 
     strncpy(dest, startP, lineLen);			// copy from start to end into hostname
-    dest[lineLen] = '\0';				    // add null terminator
+    // dest[lineLen] = '\0';				    // add null terminator
+
+    fprintf(stderr, "URL in get_url(): %s\n", dest);
 
     return 1;
 }
 
-int send_dummy_response(int client_connection) {
+int send_dummy_response_to_client(const int client_connection) {
     size_t      soc_written = 0;                // num bytes written to a socket
     char res_buff [RES_BUFF];
 
-    sprintf(res_buff, "HTTP/1.1 500 Internal Server Error\nContent-Type: text/plain\nContent-Length: %d\n\n", 0);
+    sprintf(res_buff, "HTTP/1.1 500 Internal Server Error\r\nContent-Type: text/plain\r\nContent-Length: %d\r\n\r\n", 0);
     soc_written = write(client_connection, res_buff, strlen(res_buff));
     if (soc_written < 0) {
-        fprintf(stderr, "Error writing to client socket\n");
+        perror("Error writing to client socket\n");
     }
     return soc_written;
 }
@@ -167,7 +156,7 @@ int send_dummy_response(int client_connection) {
 // puts host string into dest, reads from request
 // INPUT: dest should be size HOST_BUFF, request is buffer holding http request
 // 0 = couldn't find host string, 1 = found host string
-int get_host_string(char* dest, const char *request) {
+int get_host_string(char* dest, const char* const request) {
     char *startP, *endP, *colonP;
     size_t lineLen;
     char temp_buff[HOST_BUFF];
@@ -232,12 +221,12 @@ int get_host_string(char* dest, const char *request) {
 // Input: pointer dest is passed by reference
 // Result: creates socket and connection to host
 // returns 1 if successful connection, 0 if failed
-int connect_using_hostname(const char* host, int *pserver_socket) {
+int connect_using_hostname(const char* const host, int *pserver_socket) {
     //printf("connect_using_hostname()\n\thost string: %s\n\n", host);
 
 	struct addrinfo hints, *result, *rp;
 
-	int errcode, successFlag = 0;
+	int errcode;
 
     int server_socket;
 	
@@ -291,12 +280,12 @@ int connect_using_hostname(const char* host, int *pserver_socket) {
     return 1;
 }
 
-int connect_to_host(int* server_socket, const char* net_buff) {
+int connect_to_host(int* server_socket, const char* const req) {
     char    hostname[HOST_BUFF];            // buffer to hold host name
 
     /* --------------- Get hostname string in request -------------------- */
 
-    int foundHostName = get_host_string(hostname, net_buff);
+    int foundHostName = get_host_string(hostname, req);
     if (!foundHostName) {       // if we didn't get a hostname string -> send dummy response
         fprintf(stderr, "Error: Could not get host name from request\n\n");
         return 0;
@@ -315,11 +304,9 @@ int connect_to_host(int* server_socket, const char* net_buff) {
 
 }
 
-
-
 // sets foundConLen to 0 if Content-Length header not found, to 1 if found
 // returns contentLength if found, returns 0 if not found
-size_t get_content_length(char *response, int *foundConLen) {
+size_t get_content_length(const char* const response, int *foundConLen) {
     char        conLenString[CONLEN_BUFF];      // buffer to hold Content-Length String
 
 	// printf("response: \" %s\n\n", response);
@@ -330,7 +317,7 @@ size_t get_content_length(char *response, int *foundConLen) {
     size_t conLen;
 
 	if(startP == NULL) {
-		fprintf(stderr, "no \"Content-Length: \" detected\n");
+		// fprintf(stderr, "no \"Content-Length: \" detected\n");
         // printf("Response: \n\n%s\n\n", response);
         *foundConLen = 0;
 		return 0;
@@ -365,11 +352,11 @@ size_t get_content_length(char *response, int *foundConLen) {
 }
 
 
-// returns 0 if no end found
-size_t bytes_to_header_end(char *response, char* response_buffer, int* foundHeaderEnd) {
-    char* startP = response; 
-    char* endP;
-
+// returns 0 if no end found, copies response header into response buffer, sets foundHeaderEnd
+size_t copy_bytes_to_header_end(const char* const response, char* res_header_buff, int* foundHeaderEnd) {
+    const char* startP, *endP;
+    startP = response; 
+    
     size_t length = 0;
     size_t copy_length = 0;
 
@@ -385,10 +372,9 @@ size_t bytes_to_header_end(char *response, char* response_buffer, int* foundHead
 
     //printf("Found header end\n");
 
-    //print potential header length
-    length = endP - startP + 1;
+    // header length = start of "\r\n\r\n" - start of buffer + len of "\r\n\r\n" (should be 4)
+    length = (endP - startP) + strlen("\r\n\r\n");
     // printf("length to header end: %lu\n", length);
-    // copy potential header string
     if(length > RES_BUFF) {
         copy_length = RES_BUFF;
     }
@@ -396,16 +382,17 @@ size_t bytes_to_header_end(char *response, char* response_buffer, int* foundHead
         copy_length = length;
     }
 
-    strncpy(response_buffer, startP, copy_length);
-    response_buffer[copy_length] = '\0';        // add null terminator
-    //printf("Response Header: \n\n%s\n\n", temp);
+    // copy header string
+    strncpy(res_header_buff, startP, copy_length);
+    res_header_buff[copy_length] = '\0';        // add null terminator
+    // fprintf(stderr, "Response Header: \n\n%s\n\n", res_header_buff);
 
     // return header length
     return length;
 }
 
 // returns 0 if not found, 1 if found
-int chunked_encoding_check(char* response) {
+int chunked_encoding_check(const char* const response) {
     char* startP = strstr(response, "Transfer-Encoding: chunked");
     if (startP == NULL) return 0;
 
@@ -416,11 +403,9 @@ int chunked_encoding_check(char* response) {
 // used to detect end of chunked encoding stream 
 // only call after detecting response header end
 // returns 0 if not found, 1 if found
-int contains_end_of_stream(char *response) {
-    char* startP = response; 
-    char* endP = response;
-
-    size_t length = 0;
+int contains_end_of_stream(const char* const response) {
+    const char *endP;
+    endP = response;
 
     // check for CRLF
     endP = strstr(response, "0\r\n\r\n");
@@ -433,270 +418,685 @@ int contains_end_of_stream(char *response) {
     return 1;
 }
 
+// returns 1 if 200 is found on first line, 0 otherwise
+int is_200_response(const char* const net_buff) {
+    char *firstLine = strstr(net_buff, "\n");
+    char *firstTwoHundred = strstr(net_buff, "200");
 
-void *handle_connection(void *pclient_connection) {
-    int         client_connection = *((int *)pclient_connection);
-    int         server_socket = 0;              // socket descriptor
-
-    size_t      total_written = 0;              // total bytes written
-    size_t      total_read = 0;
-
-    size_t      soc_readed = 0;                 // num bytes read from a socket
-    size_t      soc_written = 0;                // num bytes written to a socket
-    size_t      content_length = 0;             // content length in defined in response header 
-    size_t      content_readed = 0;             // number of bytes read after response header
-
-	char        net_buff[SOCK_READ_BUFF];       // buffer to hold characters read from socket
-	char        req_buff[REQ_BUFF];				// buffer to hold the request
-	char        res_buff[RES_BUFF];      	    // buffer to hold the response header
-	char        hostname[HOST_BUFF];            // buffer to hold host name
-
-    // Free memory
-    //printf("free pclient_connection\n");
-    free(pclient_connection);
-    pclient_connection = NULL;
-
-    // set buffers with null terminators
-    memset(net_buff, '\0', sizeof(net_buff));
-    memset(req_buff, '\0', sizeof(req_buff));
-    memset(res_buff, '\0', sizeof(res_buff));
-    memset(hostname, '\0', sizeof(hostname));
-
-    
-    //printf("Handling Client Connection: %d\n\n", client_connection);
-
-    /* --------------- Read incoming request ------------------------- */
-    
-    // read from socket
-    soc_readed = read(client_connection, net_buff, sizeof(net_buff));
-    if(soc_readed < 0) {
-        perror("ERROR reading from socket");
-        goto closeConnections;
+    // if "200" not found or "200" is after the first line -> non-200 response
+    if (firstTwoHundred == NULL || firstTwoHundred >= firstLine) {
+        //printf("Non-200 Response Detected\n");
+        return 0;
     }
-    size_t reqSize = strlen(net_buff);
+    // if "200" found on first line
+    else {
+        return 1;
+    }
+}
 
-    // copy request into req_buff
-    strncat(req_buff, net_buff, sizeof(req_buff));
+// reads and sends the cached file in filepath in CACHE_DIR directory
+int read_and_send_cached_file(const char* const filepath, const int client_connection) {
+    FILE *fptr;
+    size_t file_readed = 0;
+    size_t soc_written;
+    
+    char file_buff[FILE_READ_BUFF];
 
-
-    // // print request
-    // printf("Request Size %d: \nRequest String:%.*s\n", reqSize, reqSize, req_buff);
-
-    if(reqSize == 0) {
-        soc_written = send_dummy_response(client_connection);
-        goto closeConnections;
+    fptr = fopen(filepath, "rb");
+    if(fptr == NULL) {
+        perror("file open error in read_and_send_cached_file()");
+        return -1;
     }
 
-    /* --------------- Get hostname string in request -------------------- */
-
-    int foundHost = connect_to_host(&server_socket, net_buff);
-    if(!foundHost) {
-        soc_written = send_dummy_response(client_connection);
-        goto closeConnections;
+    
+    while((file_readed = fread(file_buff, 1, sizeof(file_buff), fptr)) > 0) {
+        soc_written = write(client_connection, file_buff, file_readed);
+        if (soc_written < 0) {
+            perror("Error writing to client socket\n");
+            return -1;
+        }
     }
 
-    /* --------------- Check for Cache Hits -------------------- */
-    
-    // if(strncmp("GET", net_buff, strlen("GET")) == 0) {
-    //     char url[HOST_BUFF];
-    //     get_url(url, net_buff);
-    //     // if item is in the cache 
-    //     if(check_cache(url)) {
-    //         send_modified_get(server_socket, net_buff);
+    return 1;
+}
 
-    //         // Read response
-    //         int is200 = check_response_code(server_socket, net_buff);
-    //         
-    //         // if response is not 200:
-    //         if(!is200) {
-    //             send_cached_file(url, client_connection);
-    //         }
-    //         else {
-    //              // forward original request
-    //              // only cache if applicable
-    //              read_cache_send_response();
-    //         } 
+struct response_info {
+    // int         foundChunkedEncoding;       // true when chuncked encoding found in response header
+    int         foundConLen;            // true when content-length found in response header
+    int         foundHeaderEnd;         // true when end of the response header found in net_buff
+    int         found200;               // true when we found 200 response code
+    int         responseDone;           // true when EOS is found after header OR content_length indicates end of response
+    int         isCacheable;
+    int         responseCodeFound;
+    // these don't pertain to the response itself
+    int         error;
+    int         readError;
+    int         writeError;
+    int         fileError;
+    int         readZeroBytes;
 
-    //     }
-    // }
-    
 
-    
-    /* ------------------- Forward request to server ---------------- */        
-    soc_written = write(server_socket, req_buff, strlen(req_buff));
-    //printf("Wrote %lu chars to server connection\n\n", soc_written);
-    
+    size_t      bytesToHeaderEnd;       // bytes from the start of net_buff to the end of the header
 
-    // TODO: wrap all of this into a function and split it into read and send header and read and send the body
-    // check for Cache-Control: no-cache
-    // store response body in cache if cacheable
-    // 
-    /* ------------------- Receive response from server ---------------- */
-    int foundConLen = 0;            // flag = 1 when we found content-length in response header
-    int foundChunkedEncoding = 0;   // flag = 1 when we found chuncked encoding in response header
-    int foundHeaderEnd = 0;         // flag = 1 when we found the end of the response header
+    size_t      contentLength;          // content length in defined in response header 
 
-    size_t potentialConLen = 0;             // temp int for storing potential content length
-    size_t potentialBytestoHeaderEnd = 0;   // temp int for storing potential bytes after header
-    size_t headerSize = 0;   // header size
-    size_t total_response_read = 0;         
-    soc_readed = 0;
-    soc_written = 0;
+    size_t      content_readed;         // number of bytes read after response header
+    size_t      total_response_read;    // number of bytes read from response
 
-    int response_code_found = 0;
+    size_t      headerSize;             // header size
+};
 
-    int responseDone = 0;
-    
+struct socket_descriptors {
+    int         client_connection;
+    int         server_socket;
+    size_t      soc_readed;                 // var for storing bytes read from socket on any given read
+    size_t      soc_written;                // var for storing bytes written to socket on any given write
+};
+
+// reads from server socket and sends response until header end 
+// keeps track of response code header size, content-length
+// returns 0 if nothing unusual, -1 if error, 1 if weird case
+// TODO: check for Cache-Control: no-cache
+int handle_response_header(struct socket_descriptors* sd, char* net_buff, char* res_header_buff, struct response_info* ri, const int onlySendIf200) {
+    ri->responseCodeFound = 0;
+
     /* ------------------- Send Response from Server to Client -----------------*/
     //  Keep reading from server and sending to client until:
-    //      if Chunked Encodeing 
-    //          if we found the end of the response header
+    //      we find the end of header
+    do {
+        memset(net_buff, 0, SOCK_READ_BUFF);  // clear net_buff
+
+        // fprintf(stderr, "reading... in handle_response_header()\n");
+        
+        // read from socket
+        sd->soc_readed = read(sd->server_socket, net_buff, SOCK_READ_BUFF); 
+        if (sd->soc_readed < 0) {   // check read error
+            perror("ERROR reading from socket\n"); // if read returns < -1 then error
+            ri->error = 1;
+            ri->readError = 1;
+            ri->responseDone = 1;
+            return -1;
+        }
+        if(sd->soc_readed == 0) { // if readed is 0 -> break
+            perror("soc_readed == 0 in handle_response_header()");
+            ri->responseDone = 1;
+            ri->readZeroBytes = 1;
+            return 1;
+        }  
+
+
+        // printf("%lu read from server\n", soc_readed);
+        ri->total_response_read += sd->soc_readed;
+
+        // fprintf(stderr, "response header read\n");
+        
+        // Try to find response code (assuming it's on the first line)
+        if(!ri->responseCodeFound) {
+            // response code should be after first space
+            // char* afterfirstSpace = strstr(net_buff, " ");
+            // afterfirstSpace + 1;
+
+            // // copy first 3 characters after first space from net_buff to resCode;
+            // strncpy(resCode, afterfirstSpace, 3);
+
+            ri->found200 = is_200_response(net_buff);
+            ri->responseCodeFound = 1;
+        }
+
+        // if we don't want to send non-200 requests -> break (assume code is found on first read)
+        if(onlySendIf200 && !ri->found200) {
+            ri->responseDone = 1;
+            return 0;
+        }
+
+
+        // Try to find "Content-Length"
+        if(!ri->foundConLen) {            
+            ri->contentLength = get_content_length(net_buff, &ri->foundConLen);
+            if(ri->foundConLen) {
+                // printf("Content Len is: %lu\n", ri->contentLength);   
+                //ri->foundConLen = 1;
+            }
+        }
+
+        // Try to find header end
+        // also copy header into res_header_buff
+        ri->bytesToHeaderEnd = copy_bytes_to_header_end(net_buff, res_header_buff, &ri->foundHeaderEnd);
+        // fprintf(stderr, "bytesToHeaderEnd: %lu\n", ri->bytesToHeaderEnd);
+        
+        // Adjust header size
+        if(!ri->foundHeaderEnd) {
+            ri->headerSize += sd->soc_readed;   
+        }
+        else {
+            ri->headerSize += sd->soc_readed - ri->bytesToHeaderEnd;
+        }
+
+        // weird edge case where we haven't found the response code in the first buffer.
+        if(!ri->responseCodeFound && onlySendIf200) {
+            perror("response code not found");
+            return 1;
+        }
+        
+        // --------------------- Send response to client -----------------
+        // send response from server
+        sd->soc_written = write(sd->client_connection, net_buff, sd->soc_readed);
+        if (sd->soc_written < 0) {
+            perror("Error writing to client socket\n");
+            ri->writeError = 1;
+            ri->error = 1;
+            ri->responseDone = 1;
+            return -1;
+        }
+        // printf("%lu written to client\n", sd->soc_written);
+
+    } while(!ri->foundHeaderEnd);
+
+    // fprintf(stderr, "response header handled\n");
+
+    return 0;
+}
+
+// call only if net_buff contains the end of the header
+// reads and sends the rest of the response and caches it if applicable
+// make sure url/filepath is sanitized already
+// set doCache to 1 if you want cacheable responses to be cached
+int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_buff, const char* const filepath, struct response_info* ri, int doCache) { 
+    // stores response body in cache if cacheable
+     
+    // size_t      numContentChars = 0; 
+
+    FILE *fptr;
+
+    // stop if header end was not found/there was an error or the response code was not 200
+    if(ri->error || !ri->foundHeaderEnd || !ri->found200) {
+        // perror("handle_response_header() error");
+        return -1;
+    }
+    
+    // if just we found header end  
+    // If we didn't find Con Len
+    //  -> look out for end of stream token
+    if (!ri->foundConLen) {
+        if(contains_end_of_stream(net_buff)) {
+            ri->responseDone = 1;
+        }
+    }
+
+    // content_readed is size of the message read - part of the message that is the header
+    ri->content_readed = sd->soc_readed - ri->bytesToHeaderEnd;
+    ri->headerSize += ri->bytesToHeaderEnd;
+
+    // if content length hit -> break
+    if(ri->foundConLen) {
+        // if we read all the content we need to -> stop reading
+        if(ri->content_readed >= ri->contentLength) {
+            ri->responseDone = 1;
+        }
+    }
+    
+    // right now whether a file is cachable is whether content length is specified and whether it's less than 100 KiB
+    // if contentLength is greater than 102,400 bytes (100 KiB) -> don't cache it
+    // if cacheable -> cache the response body part of the buffer
+    // open file in write bytes mode
+    if(doCache && ri->found200 && !(ri->foundConLen && ri->contentLength > 102400)) {
+        ri->isCacheable = 1;
+
+        fptr = fopen(filepath, "wb");
+        if(fptr == NULL) {
+            fprintf(stderr, "Bad Filepath?: %s\n", filepath);
+            perror("Error opening file, check perms, maybe restart computer");
+
+            ri->error = 1;
+            ri->fileError = 1;
+        }
+        else {
+            fprintf(stderr, "CREATED/OPENED %s IN wb MODE\n", filepath);
+
+            // write bytes read from server to fptr
+            if(fwrite(net_buff, 1, sd->soc_readed, fptr) != sd->soc_readed) {
+                perror("fwrite() error1 in forward_response_with_cache_option");
+                ri->error = 1;
+                ri->fileError = 1;
+                fclose(fptr);
+
+                fprintf(stderr, "DELETING %s\n", filepath);
+                // delete file
+                if(remove(filepath) != 0) {
+                    perror("remove() error");
+                    ri->error = 1;
+                    ri->fileError = 1;
+                }
+            }
+        }
+
+        // this was unneccesary it's better to write the resposne header to the file
+        // // write content after header to cache
+        // char* startOfContent = net_buff + ri->bytesToHeaderEnd;
+        // size_t endOfHeaderToEndOfBuffer = sizeof(net_buff) - ri->bytesToHeaderEnd;
+        // // 
+        // numContentChars = strstr(startOfContent, "0\r\n\r\n") == NULL ? endOfHeaderToEndOfBuffer : (strstr(startOfContent, "0\r\n\r\n") - startOfContent);
+        // fptr = fopen(filepath, "wb");
+        // if(fptr == NULL) {
+        //     perror("Error opening file");
+        //     return 0;
+        // }
+
+        // fwrite(startOfContent, sizeof(char), numContentChars, fptr);
+    }
+
+    // return if responseDone
+    if(ri->responseDone) {
+        return 0;
+    }
+
+    /* ------------------- Send Response from Server to Client -----------------*/
+    //  Keep reading from server and sending to client until:
+    //      if no Content Length
     //              -> stop when end of stream token is found
-    //      if "Content-Length: " is found in HTTP response header
+    //      if "Content-Length: " was found in HTTP response header
     //          if data delivered after header >= content-length
     //              -> stop
     do {
-        memset(net_buff, 0, sizeof(net_buff));  // clear net_buff
+        memset(net_buff, 0, SOCK_READ_BUFF);  // clear net_buff
 
         // read from socket
-        soc_readed = read(server_socket, net_buff, sizeof(net_buff)); 
-        if (soc_readed < 0) {   // check read error
+        sd->soc_readed = read(sd->server_socket, net_buff, SOCK_READ_BUFF); 
+        if (sd->soc_readed < 0) {   // check read error
             perror("ERROR reading from socket\n"); // if read returns < -1 then error
-            break;
+            ri->readError = 1;
+            ri->error = 1;
+            return -1;
         }
-        if(soc_readed == 0) { // if readed is 0 -> break
+        if(sd->soc_readed == 0) { // if readed is 0 -> break
+            perror("soc_readed == 0 in forward_response_with_cache_option()");
+            ri->readZeroBytes = 1;
             break;
         }  
 
-        // printf("%lu read from server\n", soc_readed);
-        total_response_read += soc_readed;
+        // printf("%lu read from server\n", sd->soc_readed);
+        ri->total_response_read += sd->soc_readed;
 
         // --------------------- Send response to client -----------------
         // send response from server
-        soc_written = write(client_connection, net_buff, soc_readed);
-        if (soc_written < 0) {
+        sd->soc_written = write(sd->client_connection, net_buff, sd->soc_readed);
+        if (sd->soc_written < 0) {
             perror("Error writing to client socket\n");
+            ri->error = 1;
+            ri->writeError = 1;
+            return -1;
         }
-        // printf("%lu written to client\n", soc_written);
+        // printf("%lu written to client\n", sd->soc_written);
 
-        // Try to find response code
-        if(!response_code_found) {
-            // if response code is not 200 -> response done
-            char *firstLine = strstr(net_buff, "\n");
-            char *firstTwoHundred = strstr(net_buff, "200");
+        // keep track of content read after header
+        ri->content_readed += sd->soc_readed;
 
-            if (firstTwoHundred == NULL || firstTwoHundred >= firstLine) {
-                printf("Non-200 Response Detected\n");
-                responseDone = 1;
-            }
-            else {
-                response_code_found = 1;
-            }
-        }
+        // write to cache
+        if(!ri->fileError && ri->isCacheable && ri->content_readed <= 102400) {
+            if(fwrite(net_buff, sizeof(char), sd->soc_readed, fptr) != sd->soc_readed) {
+                perror("fwrite() error2 in forward_response_with_cache_option()");
+                ri->error = 1;
+                ri->fileError = 1;
+                fclose(fptr);
 
-        // Try to find "Content-Length"
-        if(!foundConLen && !foundHeaderEnd) {            
-            potentialConLen = get_content_length(net_buff, &foundConLen);
-            if(foundConLen) {
-                // update content_length
-                content_length = potentialConLen;
-                // printf("Content Len is: %lu\n", content_length);   
-                //foundConLen = 1;
-            }
-        }
-
-        // Try to find header end, look out for end of stream after header
-        if(!foundHeaderEnd) { 
-            potentialBytestoHeaderEnd = bytes_to_header_end(net_buff, res_buff, &foundHeaderEnd);
-            // if we just found header end  
-            //  -> check for end of stream marker after header
-            //  if end of stream is present after header
-            //      -> break
-            //  update content_readed
-            //  continue
-            if(foundHeaderEnd) {
-                // if end of stream in same buffer as header end -> end response
-                char *afterHeader = strstr(net_buff, "\r\n\r\n");
-                afterHeader += strlen("\r\n\r\n");
-                if(contains_end_of_stream(afterHeader)) {
-                    //printf("Warning: end of stream token in same buffer as header end. Small file or 404?\n");
-                    responseDone = 1;
-                    break;
+                fprintf(stderr, "DELETING %s\n", filepath);
+                // delete file
+                if(remove(filepath) != 0) {
+                    perror("remove() error");
+                    ri->error = 1;
+                    ri->fileError = 1;
+                    return -1;
                 }
-
-
-                // content_readed is size of the message read - part of the message that is the header
-                content_readed = soc_readed - potentialBytestoHeaderEnd;
-                headerSize += potentialBytestoHeaderEnd;
-
-                // if content length hit -> break
-                if(foundConLen) {
-                    // if we read all the content we need to -> last loop
-                    if(content_readed >= content_length) {
-                        responseDone = 1;
-                        break;
-                    }
-                }
-                
-                // we continue since we don't want to double count content_readed nor do we want to end if EOS is present in net_buff
-                continue;
+                return -1;
             }
-            else {
-                headerSize += soc_readed;
+        }
+        // if bytes exceed the limit -> close and remove the file
+        else if(!ri->fileError && ri->isCacheable && ri->content_readed > 102400) {
+            fprintf(stderr, "FILE SIZE LIMIT REACHED\n");
+            fclose(fptr);
+            // delete file
+            fprintf(stderr, "DELETING %s\n", filepath);
+            if(remove(filepath) != 0) {
+                perror("remove() error");
+                ri->error = 1;
+                ri->fileError = 1;
+                return -1;
             }
         }
 
         // If we didn't find Con Len
         //  -> look out for end of stream token
-        if (!foundConLen && foundHeaderEnd) {
+        if (!ri->foundConLen) {
             if(contains_end_of_stream(net_buff)) {
-                responseDone = 1;
-                break;
+                ri->responseDone = 1;
             }
         }
         // If Content-Length 
         //  -> keep track of bytes after header
-        else if(foundConLen){
-            
-            // if we found the header -> update content_readed
-            if(foundHeaderEnd) {
-                content_readed += soc_readed;
-                // printf("hi %lu\n", content_readed);
-            }
+        else {
+            // printf("hi %lu\n", content_readed);
 
             // printf("contentreaded: %lu\n", content_readed);
 
             // if we read all the content we need to -> last loop
-            if(content_readed >= content_length) {
-                responseDone = 1;
+            if(ri->content_readed >= ri->contentLength) {
+                ri->responseDone = 1;
             }
 
         }
          
-    } while(!responseDone);
+    } while(!ri->responseDone);
+
+    if(!ri->fileError && doCache && ri->isCacheable) {
+        fclose(fptr);
+    }
+
+    return 0;
+}
+
+// caches and forwards the server response
+struct response_info cache_and_forward_server_response(struct socket_descriptors* sd, char *net_buff, char* res_header_buff, const char* const filepath) {
+    struct response_info ri = {0};
+
+    // read response until header end and send regardless of response code
+    handle_response_header(sd, net_buff, res_header_buff, &ri, 0);
+
+    if(ri.error || !ri.responseCodeFound) {
+        return ri;
+    }
+
+    // read, cache (if cacheable) and send the rest of server response body
+    forward_response_with_cache_option(sd, net_buff, filepath, &ri, 1);
+    
+    return ri;
+    
+}
+
+
+// returns 0 if the response was 200 and was forwarded to the client
+// returns 1 if cached file was send
+struct response_info forward_and_cache_server_response_if_resource_was_modified(struct socket_descriptors* sd, char* net_buff, char* res_header_buff, const char* const filepath) {
+    struct response_info ri = {0};
+
+    handle_response_header(sd, net_buff, res_header_buff, &ri, 1);
+    // fprintf(stderr, "response header handled\n");
+    
+    // if 200 that means the server has modified the resource so retrieve it again, cache it and forward it
+    if(!ri.error && ri.found200 && ) {
+        // forward and cache response
+        forward_response_with_cache_option(sd, net_buff, filepath, &ri, 1);
+        return ri;
+    }
+
+    return ri;
+}
+
+
+struct response_info forward_server_response_without_caching(struct socket_descriptors* sd, char* net_buff, char* res_header_buff) {
+    struct response_info ri = {0};
+    char filepath[2] = {0};
+
+    // forward response header regardless of code
+    handle_response_header(sd, net_buff, res_header_buff, &ri, 0);
+    
+    // forward rest of response and do not cache
+    forward_response_with_cache_option(sd, net_buff, filepath, &ri, 0);
+
+    return ri;
+}
+
+int is_cached(const char* const filepath) {
+    FILE *fptr;
+
+    // cache hit
+    fptr = fopen(filepath, "rb");
+    if(fptr != NULL) {
+        fclose(fptr);
+        // perror("Cache Hit");
+        return 1;
+    }
+    else {
+        // perror("Cache Miss");
+        return 0;
+    }
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
+// sends If-Modified-Since GET request based on req_buff
+int send_if_modified_since_GET(const int server_socket, const char* const req_buff, char* modified_req_buff, const char * const filepath) {
+    size_t soc_written;
+    struct stat fileStat;
+
+    int lenToLastLine;
+    char* endOfHeader = strstr(req_buff, "\r\n\r\n");
+    char* lastNewLine = endOfHeader + strlen("\r\n");
+
+    char ifModifiedSince[] = "If-Modified-Since: "; 
+    char myTime[40] = {0};
+
+    if(stat(filepath, &fileStat) == -1) {
+        perror("fileStat error in sendModifiedGet()");
+        return -1;
+    }
+
+    struct tm *timeInfo = gmtime(&fileStat.st_ctime);
+    strftime(myTime, sizeof(myTime), "%a, %d %b %Y %H:%M:%S GMT", timeInfo);
+    
+    lenToLastLine = lastNewLine - req_buff;
+
+    // modified_req_buff = original request up to second to last "\r\n" + "If-Modified-Since: " + <myTime> + "\r\n"
+    strncat(modified_req_buff, req_buff, lenToLastLine);
+    strncat(modified_req_buff, ifModifiedSince, strnlen(ifModifiedSince, 20));
+    strncat(modified_req_buff, myTime, strnlen(myTime, 40));
+    strncat(modified_req_buff, "\r\n\r\n", strnlen("\r\n\r\n", 4));
     
 
-    // printf("Response Total Length: %lu\n", total_response_read);
-    // printf("Content Read: %lu\n\n", content_readed);
+    soc_written = write(server_socket, modified_req_buff, strnlen(modified_req_buff, REQ_BUFF));
 
-    if(foundConLen) {
-        // printf("Content Length: %lu\n", content_length);
+    // fprintf(stderr, "SENT MODIFIED GET (len: %lu): %s\n", strnlen(modified_req_buff, REQ_BUFF), modified_req_buff);
+
+    char* CRLF = strstr(modified_req_buff, "\r\n\r\n");
+    if(CRLF == NULL) {
+        fprintf(stderr, "CRLF NOT FOUND\n");
+    }
+    if(*((char *)(CRLF + strlen("\r\n\r\n"))) != '\0') {
+        fprintf(stderr, "MODDED REQ BUFF MAY NOT BE NULL TERMINATED\n");
+    }
+
+    if(soc_written <= 0) {
+        perror("write() error in send_if_modified_since_GET()");
+    }
+    else {
+        // perror("write() success in send_if_modified_since_GET()");
+    } 
+
+    return 1;
+
+}
+
+
+void *handle_connection(void *pclient_connection) {
+    int         client_connection = *((int *)pclient_connection);   // make a copy of the int
+    int         server_socket = 0;              // socket descriptor
+
+    int isGet = 0;
+    int isCached = 0;
+    int isCacheHit = 0;
+    int sentCachedFile = 0;
+    int cacheWasOutdated = 0;
+    int cacheUpdated = 0;;
+    int cacheEntryCreated = 0;
+
+    // size_t      total_written = 0;              // total bytes written
+    // size_t      total_read = 0;
+
+    size_t      soc_readed = 0;                 // num bytes read from a socket
+    size_t      soc_written = 0;                // num bytes written to a socket
+
+
+	char        net_buff[SOCK_READ_BUFF] = {0};       // buffer to hold characters read from socket
+	char        req_buff[REQ_BUFF] = {0};				// buffer to hold the request
+    char        modified_req_buff[REQ_BUFF] = {0};	// buffer to hold the modified GET request
+	char        res_header_buff[RES_BUFF] = {0};      // buffer to hold the response header
+	// char        hostname[HOST_BUFF] = {0};            // buffer to hold host name
+    char        resCode[4] = {0};               // buffer to hold response code + null terminator
+    char        url[URL_BUFF] = {0};            // holds url
+    char        filepath[FILEPATH_MAX] = CACHE_DIR;            // holds file path
+
+    struct response_info ri = {0};
+
+    // Free argument memory
+    //printf("free pclient_connection\n");
+    free(pclient_connection);
+    pclient_connection = NULL;
+
+    // set buffers with null terminators
+    // memset(net_buff, '\0', sizeof(net_buff));
+    // memset(req_buff, '\0', sizeof(req_buff));
+    // memset(modified_req_buff, '\0', sizeof(modified_req_buff));
+    // memset(res_header_buff, '\0', sizeof(res_header_buff));
+    // memset(hostname, '\0', sizeof(hostname));
+    // memset(resCode, '\0', sizeof(resCode));
+    // memset(url, '\0', sizeof(url));
+
+    struct socket_descriptors sd = {0};
+    sd.client_connection = client_connection;
+    
+    //printf("Handling Client Connection: %d\n\n", client_connection);
+
+    /* --------------- Read incoming request ------------------------- */
+    
+    // read request from client socket
+    soc_readed = read(client_connection, net_buff, SOCK_READ_BUFF);
+    if(soc_readed < 0) {
+        perror("ERROR reading from socket");
+        goto closeConnections;
+    }
+
+    // copy request into req_buff
+    size_t reqSize = strlen(net_buff);
+    strncpy(req_buff, net_buff, sizeof(req_buff));
+
+    // // print request
+    // printf("Request Size %d: \nRequest String:%.*s\n", reqSize, reqSize, req_buff);
+
+    // if request is empty -> send dummy response to client
+    if(reqSize == 0) {
+        soc_written = send_dummy_response_to_client(client_connection);
+        goto closeConnections;
+    }
+
+
+    /* --------------- Connect to Host -------------------- */
+    int foundHost = connect_to_host(&server_socket, net_buff);
+    if(!foundHost) {
+        soc_written = send_dummy_response_to_client(client_connection);
+        goto closeConnections;
+    }
+    sd.server_socket = server_socket;
+
+    /* --------------- Check for Cache Hits -------------------- */
+    
+    // if GET request -> check for cache hits
+    if(strncmp("GET", req_buff, strlen("GET")) == 0) {
+        isGet = 1;
+        get_url(url, req_buff);
+        sanitize_url(url);
+        // filepath = ./directory/url
+        strncat(filepath, url, strnlen(url, URL_BUFF - strlen(filepath) - 1)); // append url to directory path
+
+        fprintf(stderr, "URL: %s\n", url);
+        isCached = is_cached(filepath);
     }
     
-    printf("Request");
-    if(foundConLen) {
-        printf(" (Content-Length: %lu):\n", content_length);
+    // if non-GET request
+    if(!isGet) {
+        /* ------------------- send original request to server ---------------- */        
+        soc_written = write(server_socket, net_buff, soc_readed);
+        ri = forward_server_response_without_caching(&sd, net_buff, res_header_buff);
+    }
+    // if item is in the cache -> send modified GET, if Response is 200 -> cache the response, else -> send cached file to client 
+    else if(isCached) {
+        isCacheHit = 1;
+        /* ------------------- Send modified GET to server ---------------- */        
+        send_if_modified_since_GET(server_socket, req_buff, modified_req_buff, filepath);
+
+        // fprintf(stderr, "sent modified Get\n");
+
+        // Read response
+        ri = forward_and_cache_server_response_if_resource_was_modified(&sd, net_buff, res_header_buff, filepath);
+        // fprintf(stderr, "read response header to modded GET\n");
+
+        // if response is not 200:
+        if(!ri.error && !ri.found200) {
+            /* ------------------- Send Cached File to Client ---------------- */        
+            // fprintf(stderr, "response to modded GET not 200, sending cached file \n");
+            read_and_send_cached_file(filepath, client_connection);
+            sentCachedFile = 1;
+        }
+        // if response was 200 then the forward_and_cache_server_response_if_resource_was_modified() call forwarded and cached the response
+        else {
+            // fprintf(stderr, "response to modded GET was 200, response was forwarded \n");
+            cacheWasOutdated = 1;
+            cacheUpdated = 1;
+        }
+    }
+
+    // if item is not in the cache -> send original request and cache the response
+    else if(!isCached) {
+        /* ------------------- Send original request to server ---------------- */        
+        soc_written = write(server_socket, req_buff, soc_readed);
+        /* ------------------- Cache and Forward Response from Server ---------------- */   
+        ri = cache_and_forward_server_response(&sd, net_buff, res_header_buff, filepath);
+        cacheUpdated = 1;
+        cacheEntryCreated = 1;
+    }
+    
+    
+    //printf("Wrote %lu chars to server connection\n\n", soc_written);
+
+
+    // printf("Response Total Length: %lu\n", ri->total_response_read);
+    // printf("Content Read: %lu\n\n", ri->content_readed);
+
+    
+    printf("Original Request");
+    if(isGet) {
+        printf(" %s ", url);
+    }
+    if(ri.foundConLen) {
+        printf(" (Content-Length: %lu):\n", ri.contentLength);
     }
     else {
         printf(":\n");
     }
-    
     printf("%s\n", req_buff);
 
-    printf("Response (Content Read: %lu):\n", content_readed - 3);
+    if(isCacheHit) {
+        printf("Modified Request");
+        printf(" %s", url);
+        printf(":\n%s\n", modified_req_buff); 
 
-    printf("%s\n\n", res_buff);
+        printf("Modified Response");     
+        printf(" %s", url);  
+        printf(":\n%s\n", res_header_buff);
+    }
     
+    if(!isCacheHit) {
+        printf("Response %s (Content Read: %lu)", url, ri.content_readed);
+        printf(":\n%s\n\n", res_header_buff);
+    }
+
+    if(sentCachedFile) {
+        printf("Sent Cached Entry in %s\n\n", filepath);
+    }
+    
+    if(cacheEntryCreated) {
+        printf("Cache Entry Created in %s\n\n", filepath);
+    }
+    else if(cacheUpdated) {
+        printf("Cache Entry Updated in %s\n\n", filepath);
+    }
     
     // close connections
     closeConnections:

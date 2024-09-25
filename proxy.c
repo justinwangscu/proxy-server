@@ -248,7 +248,7 @@ size_t bytes_to_header_end(char *response, char* response_buffer, int* foundHead
     //printf("Found header end\n");
 
     //print potential header length
-    length = endP - startP + 1;
+    length = endP - startP + strlen("\r\n\r\n");
     // printf("length to header end: %lu\n", length);
     // copy potential header string
     if(length > RES_BUFF) {
