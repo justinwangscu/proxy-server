@@ -19,7 +19,7 @@
 #define CONLEN_BUFF		128			// Buffer size for host name
 
 #define SERVER_BACKLOG  100		    // Number of connections allowed 
-#define THREAD_POOL_LEN 70		    // Number of threads allowed 
+#define THREAD_POOL_LEN 1		    // Number of threads allowed 
 
 
 #define SERVER_PORT		3003		// Port number of server
@@ -338,11 +338,9 @@ void *handle_connection(void *pclient_connection) {
     //printf("Handling Client Connection: %d\n\n", client_connection);
 
     /* --------------- Read incoming request ------------------------- */
-
-    
     
     // read from socket
-    soc_readed = read(client_connection, net_buff, sizeof(net_buff));
+    soc_readed = read(client_connection, net_buff, sizeof(net_buff) - 1);
     if(soc_readed < 0) {
         perror("ERROR reading from socket");
         goto closeConnections;
@@ -422,7 +420,7 @@ void *handle_connection(void *pclient_connection) {
         memset(net_buff, 0, sizeof(net_buff));  // clear net_buff
 
         // read from socket
-        soc_readed = read(server_socket, net_buff, sizeof(net_buff)); 
+        soc_readed = read(server_socket, net_buff, sizeof(net_buff) - 1); 
         if (soc_readed < 0) {   // check read error
             perror("ERROR reading from socket\n"); // if read returns < -1 then error
             break;
@@ -430,7 +428,7 @@ void *handle_connection(void *pclient_connection) {
         if(soc_readed == 0) { // if readed is 0 -> break
             break;
         }  
-
+        fprintf(stderr, "soc_readed: %lu\n", soc_readed);
         // printf("%lu read from server\n", soc_readed);
         total_response_read += soc_readed;
 

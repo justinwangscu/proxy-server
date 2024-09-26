@@ -1,5 +1,5 @@
 Listening...
-Original Request marybell.honobono.cc- :
+If-Mod Req marybell.honobono.cc-:
 GET http://marybell.honobono.cc/ HTTP/1.1
 Host: marybell.honobono.cc
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
@@ -11,27 +11,13 @@ Upgrade-Insecure-Requests: 1
 Priority: u=0, i
 Pragma: no-cache
 Cache-Control: no-cache
+If-Modified-Since: Wed, 25 Sep 2024 08:43:31 GMT
 
 
-Modified Request marybell.honobono.cc-:
-GET http://marybell.honobono.cc/ HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
-Priority: u=0, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:21 GMT
-
-
-Modified Response marybell.honobono.cc-:
+If-Mod Res marybell.honobono.cc-:
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:54 GMT
+Date: Wed, 25 Sep 2024 08:45:00 GMT
 Content-Type: application/xhtml+xml; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -40,9 +26,9 @@ Content-Security-Policy: frame-ancestors 'none'; default-src 'self'; style-src '
 Referrer-Policy: no-referrer
 
 
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-
+Sent Cached Entry in cachedfiles/marybell.honobono.cc-
 
-Original Request marybell.honobono.cc-honobono1.css  (Content-Length: 7527):
+If-Mod Req marybell.honobono.cc-honobono1.css:
 GET http://marybell.honobono.cc/honobono1.css HTTP/1.1
 Host: marybell.honobono.cc
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
@@ -53,26 +39,13 @@ Connection: keep-alive
 Priority: u=2
 Pragma: no-cache
 Cache-Control: no-cache
+If-Modified-Since: Wed, 25 Sep 2024 08:43:31 GMT
 
 
-Modified Request marybell.honobono.cc-honobono1.css:
-GET http://marybell.honobono.cc/honobono1.css HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: text/css,*/*;q=0.1
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=2
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:21 GMT
-
-
-Modified Response marybell.honobono.cc-honobono1.css:
+If-Mod Res marybell.honobono.cc-honobono1.css:
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:54 GMT
+Date: Wed, 25 Sep 2024 08:45:00 GMT
 Content-Type: text/css
 Content-Length: 7527
 Last-Modified: Tue, 29 Aug 2023 06:17:32 GMT
@@ -81,9 +54,9 @@ ETag: "64ed8d7c-1d67"
 Accept-Ranges: bytes
 
 
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-honobono1.css
+Sent Cached Entry in cachedfiles/marybell.honobono.cc-honobono1.css
 
-Original Request marybell.honobono.cc-ruby.css  (Content-Length: 658):
+If-Mod Req marybell.honobono.cc-ruby.css:
 GET http://marybell.honobono.cc/ruby.css HTTP/1.1
 Host: marybell.honobono.cc
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
@@ -94,26 +67,13 @@ Connection: keep-alive
 Priority: u=2
 Pragma: no-cache
 Cache-Control: no-cache
+If-Modified-Since: Wed, 25 Sep 2024 08:44:42 GMT
 
 
-Modified Request marybell.honobono.cc-ruby.css:
-GET http://marybell.honobono.cc/ruby.css HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: text/css,*/*;q=0.1
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=2
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:29 GMT
-
-
-Modified Response marybell.honobono.cc-ruby.css:
+If-Mod Res marybell.honobono.cc-ruby.css:
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:54 GMT
+Date: Wed, 25 Sep 2024 08:45:00 GMT
 Content-Type: text/css
 Content-Length: 658
 Last-Modified: Sun, 09 Apr 2023 23:03:23 GMT
@@ -122,473 +82,9 @@ ETag: "6433443b-292"
 Accept-Ranges: bytes
 
 
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-ruby.css
+Sent Cached Entry in cachedfiles/marybell.honobono.cc-ruby.css
 
-Original Request marybell.honobono.cc-images-mb31m3.jpg  (Content-Length: 25699):
-GET http://marybell.honobono.cc/images/mb31m3.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb31m3.jpg:
-GET http://marybell.honobono.cc/images/mb31m3.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:21 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb31m3.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:54 GMT
-Content-Type: image/jpeg
-Content-Length: 25699
-Last-Modified: Tue, 14 Aug 2007 02:46:25 GMT
-Connection: keep-alive
-ETag: "46c11781-6463"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb31m3.jpg
-
-Original Request marybell.honobono.cc-images-mb32m2.jpg  (Content-Length: 21406):
-GET http://marybell.honobono.cc/images/mb32m2.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb32m2.jpg:
-GET http://marybell.honobono.cc/images/mb32m2.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:22 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb32m2.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:55 GMT
-Content-Type: image/jpeg
-Content-Length: 21406
-Last-Modified: Tue, 14 Aug 2007 02:46:23 GMT
-Connection: keep-alive
-ETag: "46c1177f-539e"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb32m2.jpg
-
-Original Request marybell.honobono.cc-images-mb34m1.jpg  (Content-Length: 25493):
-GET http://marybell.honobono.cc/images/mb34m1.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb34m1.jpg:
-GET http://marybell.honobono.cc/images/mb34m1.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:22 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb34m1.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:55 GMT
-Content-Type: image/jpeg
-Content-Length: 25493
-Last-Modified: Tue, 14 Aug 2007 02:46:26 GMT
-Connection: keep-alive
-ETag: "46c11782-6395"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb34m1.jpg
-
-Original Request marybell.honobono.cc-images-mb35m2.jpg  (Content-Length: 22532):
-GET http://marybell.honobono.cc/images/mb35m2.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb35m2.jpg:
-GET http://marybell.honobono.cc/images/mb35m2.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:22 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb35m2.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:55 GMT
-Content-Type: image/jpeg
-Content-Length: 22532
-Last-Modified: Tue, 14 Aug 2007 02:46:30 GMT
-Connection: keep-alive
-ETag: "46c11786-5804"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb35m2.jpg
-
-Original Request marybell.honobono.cc-images-mb36m3.jpg  (Content-Length: 20947):
-GET http://marybell.honobono.cc/images/mb36m3.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb36m3.jpg:
-GET http://marybell.honobono.cc/images/mb36m3.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:22 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb36m3.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:55 GMT
-Content-Type: image/jpeg
-Content-Length: 20947
-Last-Modified: Tue, 14 Aug 2007 02:46:30 GMT
-Connection: keep-alive
-ETag: "46c11786-51d3"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb36m3.jpg
-
-Original Request marybell.honobono.cc-images-mb39m2.jpg  (Content-Length: 19849):
-GET http://marybell.honobono.cc/images/mb39m2.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb39m2.jpg:
-GET http://marybell.honobono.cc/images/mb39m2.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:22 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb39m2.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:55 GMT
-Content-Type: image/jpeg
-Content-Length: 19849
-Last-Modified: Tue, 14 Aug 2007 02:46:35 GMT
-Connection: keep-alive
-ETag: "46c1178b-4d89"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb39m2.jpg
-
-Original Request marybell.honobono.cc-images-mb01l1.png  (Content-Length: 300719):
-GET http://marybell.honobono.cc/images/mb01l1.png HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Response marybell.honobono.cc-images-mb01l1.png (Content Read: 300719):
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:55 GMT
-Content-Type: image/png
-Content-Length: 300719
-Last-Modified: Sat, 14 Feb 2009 02:16:31 GMT
-Connection: keep-alive
-ETag: "4996297f-496af"
-Accept-Ranges: bytes
-
-
-
-Cache Entry Created in cachedfiles/marybell.honobono.cc-images-mb01l1.png
-
-Original Request marybell.honobono.cc-images-mb_cgsketch300.jpg  (Content-Length: 11934):
-GET http://marybell.honobono.cc/images/mb_cgsketch300.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb_cgsketch300.jpg:
-GET http://marybell.honobono.cc/images/mb_cgsketch300.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:22 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb_cgsketch300.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
-Content-Type: image/jpeg
-Content-Length: 11934
-Last-Modified: Tue, 14 Aug 2007 02:46:43 GMT
-Connection: keep-alive
-ETag: "46c11793-2e9e"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb_cgsketch300.jpg
-
-Original Request marybell.honobono.cc-images-mb_cgcolored300.jpg  (Content-Length: 20102):
-GET http://marybell.honobono.cc/images/mb_cgcolored300.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-mb_cgcolored300.jpg:
-GET http://marybell.honobono.cc/images/mb_cgcolored300.jpg HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:23 GMT
-
-
-Modified Response marybell.honobono.cc-images-mb_cgcolored300.jpg:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
-Content-Type: image/jpeg
-Content-Length: 20102
-Last-Modified: Tue, 14 Aug 2007 02:46:42 GMT
-Connection: keep-alive
-ETag: "46c11792-4e86"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-mb_cgcolored300.jpg
-
-Original Request marybell.honobono.cc-images-yukata01.png :
-GET http://marybell.honobono.cc/images/yukata01.png HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Response marybell.honobono.cc-images-yukata01.png (Content Read: 0):
-HTTP/1.1 404 Not Found
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
-Content-Type: text/html
-Transfer-Encoding: chunked
-Connection: keep-alive
-Content-Encoding: gzip
-
-
-
-Cache Entry Created in cachedfiles/marybell.honobono.cc-images-yukata01.png
-
-Original Request marybell.honobono.cc-images-email_addr.png  (Content-Length: 1202):
-GET http://marybell.honobono.cc/images/email_addr.png HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-email_addr.png:
-GET http://marybell.honobono.cc/images/email_addr.png HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:29 GMT
-
-
-Modified Response marybell.honobono.cc-images-email_addr.png:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
-Content-Type: image/png
-Content-Length: 1202
-Last-Modified: Fri, 08 Oct 2021 17:47:52 GMT
-Connection: keep-alive
-ETag: "61608448-4b2"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-email_addr.png
-
-Original Request marybell.honobono.cc-images-valid-xhtml11.png  (Content-Length: 1413):
-GET http://marybell.honobono.cc/images/valid-xhtml11.png HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Modified Request marybell.honobono.cc-images-valid-xhtml11.png:
-GET http://marybell.honobono.cc/images/valid-xhtml11.png HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=5, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:29 GMT
-
-
-Modified Response marybell.honobono.cc-images-valid-xhtml11.png:
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
-Content-Type: image/png
-Content-Length: 1413
-Last-Modified: Mon, 28 Jun 2021 04:40:12 GMT
-Connection: keep-alive
-ETag: "60d952ac-585"
-Accept-Ranges: bytes
-
-
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-images-valid-xhtml11.png
-
-Original Request marybell.honobono.cc-wb_hima.gif  (Content-Length: 16167):
+If-Mod Req marybell.honobono.cc-wb_hima.gif:
 GET http://marybell.honobono.cc/wb_hima.gif HTTP/1.1
 Host: marybell.honobono.cc
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
@@ -599,26 +95,13 @@ Connection: keep-alive
 Priority: u=4, i
 Pragma: no-cache
 Cache-Control: no-cache
+If-Modified-Since: Wed, 25 Sep 2024 08:43:32 GMT
 
 
-Modified Request marybell.honobono.cc-wb_hima.gif:
-GET http://marybell.honobono.cc/wb_hima.gif HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=4, i
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:23 GMT
-
-
-Modified Response marybell.honobono.cc-wb_hima.gif:
+If-Mod Res marybell.honobono.cc-wb_hima.gif:
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
+Date: Wed, 25 Sep 2024 08:45:00 GMT
 Content-Type: image/gif
 Content-Length: 16167
 Last-Modified: Tue, 14 Aug 2007 02:46:49 GMT
@@ -627,80 +110,12 @@ ETag: "46c11799-3f27"
 Accept-Ranges: bytes
 
 
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-wb_hima.gif
-
-Original Request marybell.honobono.cc-images-jp2.gif :
-GET http://marybell.honobono.cc/images/jp2.gif HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Referer: http://marybell.honobono.cc/honobono1.css
-Priority: u=4, i
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Response marybell.honobono.cc-images-jp2.gif (Content Read: 0):
-HTTP/1.1 404 Not Found
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
-Content-Type: text/html
-Transfer-Encoding: chunked
-Connection: keep-alive
-Content-Encoding: gzip
-
-
-
-Cache Entry Created in cachedfiles/marybell.honobono.cc-images-jp2.gif
-
-Original Request marybell.honobono.cc-CharisSIL-Regular.woff  (Content-Length: 398878):
-GET http://marybell.honobono.cc/CharisSIL-Regular.woff HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Referer: http://marybell.honobono.cc/honobono1.css
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Response marybell.honobono.cc-CharisSIL-Regular.woff (Content Read: 398878):
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:56 GMT
-Content-Type: application/font-woff
-Content-Length: 398878
-Last-Modified: Sun, 09 Apr 2023 23:07:14 GMT
-Connection: keep-alive
-ETag: "64334522-6161e"
-Accept-Ranges: bytes
-
-
-
-Cache Entry Created in cachedfiles/marybell.honobono.cc-CharisSIL-Regular.woff
-
-Original Request marybell.honobono.cc-AndikaNewBasic-B.woff  (Content-Length: 115860):
-GET http://marybell.honobono.cc/AndikaNewBasic-B.woff HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Referer: http://marybell.honobono.cc/honobono1.css
-Pragma: no-cache
-Cache-Control: no-cache
-
+Sent Cached Entry in cachedfiles/marybell.honobono.cc-wb_hima.gif
 
 Response marybell.honobono.cc-AndikaNewBasic-B.woff (Content Read: 115860):
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:57 GMT
+Date: Wed, 25 Sep 2024 08:45:00 GMT
 Content-Type: application/font-woff
 Content-Length: 115860
 Last-Modified: Mon, 10 Apr 2023 00:00:28 GMT
@@ -710,25 +125,10 @@ Accept-Ranges: bytes
 
 
 
-Cache Entry Created in cachedfiles/marybell.honobono.cc-AndikaNewBasic-B.woff
-
-Original Request marybell.honobono.cc-AndikaNewBasic-BI.woff  (Content-Length: 118220):
-GET http://marybell.honobono.cc/AndikaNewBasic-BI.woff HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Referer: http://marybell.honobono.cc/honobono1.css
-Pragma: no-cache
-Cache-Control: no-cache
-
-
 Response marybell.honobono.cc-AndikaNewBasic-BI.woff (Content Read: 118220):
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:57 GMT
+Date: Wed, 25 Sep 2024 08:45:01 GMT
 Content-Type: application/font-woff
 Content-Length: 118220
 Last-Modified: Mon, 10 Apr 2023 00:00:11 GMT
@@ -738,93 +138,7 @@ Accept-Ranges: bytes
 
 
 
-Cache Entry Created in cachedfiles/marybell.honobono.cc-AndikaNewBasic-BI.woff
-
-Original Request marybell.honobono.cc-CharisSIL-Italic.woff  (Content-Length: 427450):
-GET http://marybell.honobono.cc/CharisSIL-Italic.woff HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Referer: http://marybell.honobono.cc/honobono1.css
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Response marybell.honobono.cc-CharisSIL-Italic.woff (Content Read: 427450):
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:57 GMT
-Content-Type: application/font-woff
-Content-Length: 427450
-Last-Modified: Sun, 09 Apr 2023 23:07:09 GMT
-Connection: keep-alive
-ETag: "6433451d-685ba"
-Accept-Ranges: bytes
-
-
-
-Cache Entry Created in cachedfiles/marybell.honobono.cc-CharisSIL-Italic.woff
-
-Original Request marybell.honobono.cc-CharisSIL-BoldItalic.woff  (Content-Length: 434914):
-GET http://marybell.honobono.cc/CharisSIL-BoldItalic.woff HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Referer: http://marybell.honobono.cc/honobono1.css
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Response marybell.honobono.cc-CharisSIL-BoldItalic.woff (Content Read: 434914):
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:57 GMT
-Content-Type: application/font-woff
-Content-Length: 434914
-Last-Modified: Sun, 09 Apr 2023 23:07:16 GMT
-Connection: keep-alive
-ETag: "64334524-6a2e2"
-Accept-Ranges: bytes
-
-
-
-Cache Entry Created in cachedfiles/marybell.honobono.cc-CharisSIL-BoldItalic.woff
-
-Original Request marybell.honobono.cc-CharisSIL-Bold.woff  (Content-Length: 397294):
-GET http://marybell.honobono.cc/CharisSIL-Bold.woff HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Referer: http://marybell.honobono.cc/honobono1.css
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-Response marybell.honobono.cc-CharisSIL-Bold.woff (Content Read: 397294):
-HTTP/1.1 200 OK
-Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:58 GMT
-Content-Type: application/font-woff
-Content-Length: 397294
-Last-Modified: Sun, 09 Apr 2023 23:07:12 GMT
-Connection: keep-alive
-ETag: "64334520-60fee"
-Accept-Ranges: bytes
-
-
-
-Cache Entry Created in cachedfiles/marybell.honobono.cc-CharisSIL-Bold.woff
-
-Original Request marybell.honobono.cc-favicon.png  (Content-Length: 2279):
+If-Mod Req marybell.honobono.cc-favicon.png:
 GET http://marybell.honobono.cc/favicon.png HTTP/1.1
 Host: marybell.honobono.cc
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
@@ -835,26 +149,13 @@ Connection: keep-alive
 Priority: u=6
 Pragma: no-cache
 Cache-Control: no-cache
+If-Modified-Since: Wed, 25 Sep 2024 08:43:34 GMT
 
 
-Modified Request marybell.honobono.cc-favicon.png:
-GET http://marybell.honobono.cc/favicon.png HTTP/1.1
-Host: marybell.honobono.cc
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
-Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Priority: u=6
-Pragma: no-cache
-Cache-Control: no-cache
-If-Modified-Since: Wed, 25 Sep 2024 05:34:25 GMT
-
-
-Modified Response marybell.honobono.cc-favicon.png:
+If-Mod Res marybell.honobono.cc-favicon.png:
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
-Date: Wed, 25 Sep 2024 05:45:58 GMT
+Date: Wed, 25 Sep 2024 08:45:01 GMT
 Content-Type: image/png
 Content-Length: 2279
 Last-Modified: Sun, 09 Jan 2022 16:25:08 GMT
@@ -863,9 +164,10 @@ ETag: "61db0c64-8e7"
 Accept-Ranges: bytes
 
 
-Cache Entry Updated in cachedfiles/marybell.honobono.cc-favicon.png
+Sent Cached Entry in cachedfiles/marybell.honobono.cc-favicon.png
 
 closed client_socket
 
-25 connections serviced
+8 connections serviced
 Joined thread 0; 
+
