@@ -29,7 +29,7 @@
 
 
 #define SOCK_READ_BUFF  8192		// Size of the buffer used to store the bytes read over socket (make this big or else bugs)
-#define FILE_READ_BUFF  8192		// Size of the buffer used to store the bytes read from file
+#define FILE_READ_BUFF  8196		// Size of the buffer used to store the bytes read from file
 
 #define REQ_BUFF		8192		// Size of the buffer used to store requests from browser
 #define RES_BUFF      	8192        // Size of the buffer used to store response to/from server
@@ -402,7 +402,7 @@ size_t copy_bytes_to_header_end(const char* const response, char* res_header_buf
 
     // printf("length to header end: %lu\n", length);
     if(length > RES_BUFF) {
-        copy_length = RES_BUFF;
+        copy_length = RES_BUFF - 1;
     }
     else {
         copy_length = length;
@@ -410,7 +410,7 @@ size_t copy_bytes_to_header_end(const char* const response, char* res_header_buf
 
     // copy header string
     strncpy(res_header_buff, startP, copy_length);
-    res_header_buff[copy_length] = '\0';        // add null terminator
+    //res_header_buff[copy_length] = '\0';        // add null terminator
     // fprintf(stderr, "Response Header: \n\n%s\n\n", res_header_buff);
 
     // return header length
@@ -514,7 +514,8 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
     fseek(fptr, 0, SEEK_END);
     long file_size = ftell(fptr);
     fseek(fptr, 0L, SEEK_SET);
-
+    
+    fprintf(stderr, "File size: %ld bytes\n", file_size);
     
     // Read until Header End
     do{
@@ -549,16 +550,19 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
                 return EXIT_FAILURE;
             }
             total_written += soc_written;
-            fprintf(stderr, "WARNING: file read weird edge case. response header is super big. Probably an error\n");
+            fprintf(stderr, "WARNING: file read weird edge case. response header is bigger than buffer. Probably an error\n");
         }
         else {
-            headerSize += file_readed - bytesToHeaderEnd;
+            headerSize += bytesToHeaderEnd;
         }
     } while(!foundHeaderEnd);
 
-    
+    fprintf(stderr, "response header \n%s", res_header_buff);
+    fprintf(stderr, "header size: %lu\n", headerSize);
+
     // if it's not chunked encoded -> just send the file as you read it
     if(!foundChunkedEncoding) {
+        fprintf(stderr, "not chunked\n");
         // write whole file buffer
         soc_written = write(client_connection, file_buff, file_readed);
         if (soc_written < 0) {
@@ -584,6 +588,8 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
                 }
             }
             total_read += file_readed;
+
+            fprintf(stderr, "file readed %d, ", file_readed);
             
             // write to client
             soc_written = write(client_connection, file_buff, file_readed);
@@ -593,6 +599,8 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
                 return EXIT_FAILURE;
             }
             total_written += soc_written;
+
+            fprintf(stderr, "soc_written %d, ", soc_written);
             
         
         } while(file_readed > 0);
@@ -601,6 +609,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
     // if it is chunked encoded -> whoo boy TODO: FIGURE THIS OUT
     // https://datatracker.ietf.org/doc/html/rfc9112#section-7.1
     else {
+        
         // write only the response header
         soc_written = write(client_connection, file_buff, bytesToHeaderEnd);
         if (soc_written < 0 || soc_written != bytesToHeaderEnd) {
@@ -609,11 +618,11 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
             return EXIT_FAILURE;
         }
         total_written += soc_written;
-        
         // copy the chunks and send to client
         do {
             memset(hex_ascii, 0, sizeof(hex_ascii));
             memset(chunk_size_buff, 0, sizeof(chunk_size_buff));  
+            memset(file_buff, 0, sizeof(file_buff));
 
             // peek the hex string
             // fseek to after what we've written (hopefully this is sets it to start of the chunk length string)
@@ -621,7 +630,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
             file_readed = fread(chunk_size_buff, 1, sizeof(chunk_size_buff) - 1, fptr); // read file
             if (file_readed < 1) {
                 if (feof(fptr)) {
-                    fprintf(stderr, "unexpected feof %s\n", filepath);
+                    fprintf(stderr, "unexpected feof1 %s\n", filepath);
                     return EXIT_FAILURE; // End of file, done reading
                 }
                 if (ferror(fptr)) {
@@ -644,16 +653,16 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
 
             fprintf(stderr, "hex_ascii %s, ", hex_ascii);
             fprintf(stderr, "hex_int %lu\n", hex_int);
+            fprintf(stderr, "hex string len %d\n", hex_string_len);
 
             size_t bytesToSend = hex_string_len + strlen("\r\n");
-
             // if end of response
             if(hex_int == 0) {
                 bytesToSend += strlen("\r\n");
                 fprintf(stderr, "Last chunk 0\n");
                 // send 0CRLFCRLF
-                soc_written = write(client_connection, "0\r\n\r\n", strlen("0\r\n\r\n"));
-                    if (soc_written < 0 || soc_written != bytesToSend) {
+                soc_written = write(client_connection, "0\r\n\r\n", 5);
+                    if (soc_written < 0) {
                         perror("Error writing to client socket 5");
                         fclose(fptr);
                         return EXIT_FAILURE;
@@ -661,21 +670,20 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
                 total_written += soc_written;
                 break;
             }
-            fprintf(stderr, "bytesToSend %lu\n", bytesToSend);
 
-            // send hex string + CRLF
-            soc_written = write(client_connection, chunk_size_buff, bytesToSend);
-                if (soc_written < 0 || soc_written != bytesToSend) {
-                    perror("Error writing to client socket 6");
-                    fclose(fptr);
-                    return EXIT_FAILURE;
-                }
-            total_written += soc_written;
-            fseek(fptr, total_written, SEEK_SET);    // skip to after CRLF
+            // // send hex string + CRLF
+            // soc_written = write(client_connection, chunk_size_buff, bytesToSend);
+            // if (soc_written < 0 || soc_written != bytesToSend) {
+            //     perror("Error writing to client socket 6");
+            //     fclose(fptr);
+            //     return EXIT_FAILURE;
+            // }
+            // total_written += soc_written;
+            // fprintf(stderr, "sent <HexString>CRLF \n");
+            // fseek(fptr, bytesToSend, SEEK_CUR);    // skip to after CRLF
 
-            bytesToSend = hex_int;
+            bytesToSend += hex_int + strlen("\r\n");
             do {
-                memset(file_buff, 0, sizeof(chunk_size_buff));  
                 fprintf(stderr, "bytesToSend %lu\n", bytesToSend);
                 size_t readStepSize = (bytesToSend > sizeof(file_buff) - 1) ? sizeof(file_buff) - 1 : bytesToSend;
 
@@ -683,10 +691,11 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
                     fprintf(stderr, "bytesToSend larger than buffer\n");
                 }
 
+                memset(file_buff, 0, sizeof(file_buff));  
                 file_readed = fread(file_buff, 1, readStepSize, fptr); // read file
                 if (file_readed < 1) {
                     if (feof(fptr)) {
-                        fprintf(stderr, "unexpected feof %s\n", filepath);
+                        fprintf(stderr, "unexpected feof2 %s\n", filepath);
                         return EXIT_FAILURE; // End of file, done reading
                     }
                     if (ferror(fptr)) {
@@ -696,17 +705,19 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
                     }
                 }
                 soc_written = write(client_connection, file_buff, file_readed);
-                if (soc_written < 0) {
+                if (soc_written < 0 || soc_written != file_readed) {
                     perror("Error writing to client socket 7"); // problem area
                     fclose(fptr);
                     return EXIT_FAILURE;
                 }
+                perror("Gimme something"); // problem area
                 total_written += soc_written;
                 bytesToSend = bytesToSend - readStepSize;
+
             } while(bytesToSend > 0);
 
-
-            // send CRLF
+            fprintf(stderr, "bytesToSendEnd %lu\n", bytesToSend);
+            // // send CRLF
             // soc_written = write(client_connection, "\r\n", strlen("\r\n"));
             //     if (soc_written < 0) {
             //         perror("Error writing to client socket 8");     // problem area
@@ -714,8 +725,10 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
             //         return EXIT_FAILURE;
             //     }
 
-            total_written += soc_written;
-            
+            // total_written += soc_written;
+
+            fprintf(stderr, "total written: %lu\n", total_written);
+
                 
         } while(hex_int != 0);
 
@@ -725,7 +738,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
     fclose(fptr);
 
 
-    fprintf(stderr, "File size: %ld bytes\n", file_size);
+   
     fprintf(stderr, "total_read: %lu, ", total_read);
     fprintf(stderr, "total_written: %lu\n", total_written);
     perror("file done?");
@@ -1505,7 +1518,7 @@ void *handle_connection(void *pclient_connection) {
     // close connections
     closeConnections:
     close(server_socket);
-    shutdown (client_connection, SHUT_RDWR);
+    // shutdown (client_connection, SHUT_RDWR);
     close (client_connection);
 
 

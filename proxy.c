@@ -350,6 +350,7 @@ void *handle_connection(void *pclient_connection) {
     // copy request into req_buff
     strncat(req_buff, net_buff, sizeof(req_buff));
 
+    fprintf(stderr, "Request: %s\n", req_buff);
 
     // // print request
     // printf("Request Size %d: \nRequest String:%.*s\n", reqSize, reqSize, req_buff);
@@ -390,6 +391,7 @@ void *handle_connection(void *pclient_connection) {
     /* ------------------- Forward request to server ---------------- */        
     soc_written = write(server_socket, net_buff, strlen(net_buff));
     //printf("Wrote %lu chars to server connection\n\n", soc_written);
+
     
 
     /* ------------------- Receive response from server ---------------- */
@@ -407,6 +409,8 @@ void *handle_connection(void *pclient_connection) {
     int response_code_found = 0;
 
     int responseDone = 0;
+
+    
     
     /* ------------------- Send Response from Server to Client -----------------*/
     //  Keep reading from server and sending to client until:

@@ -1,0 +1,904 @@
+Request: GET http://marybell.honobono.cc/ HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+no "Content-Length: " detected
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 4988
+Request: GET http://marybell.honobono.cc/honobono1.css HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=2
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 735
+Request: GET http://marybell.honobono.cc/ruby.css HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=2
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 904
+Request: GET http://marybell.honobono.cc/images/mb31m3.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 8191
+soc_readed: 5889
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2014
+Request: GET http://marybell.honobono.cc/images/mb32m2.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 4481
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1945
+Request: GET http://marybell.honobono.cc/images/mb34m1.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 2065
+Request: GET http://marybell.honobono.cc/images/mb35m2.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 7040
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 255
+Request: GET http://marybell.honobono.cc/images/mb36m3.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 78
+Request: GET http://marybell.honobono.cc/images/mb39m2.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1796
+Request: GET http://marybell.honobono.cc/images/mb01l1.png HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 7040
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 7811
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 1665
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 7040
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 6699
+Request: GET http://marybell.honobono.cc/images/mb_cgsketch300.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 921
+Request: GET http://marybell.honobono.cc/images/mb_cgcolored300.jpg HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2049
+Request: GET http://marybell.honobono.cc/images/yukata01.png HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 329
+no "Content-Length: " detected
+Request: GET http://marybell.honobono.cc/images/email_addr.png HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 42
+Request: GET http://marybell.honobono.cc/images/valid-xhtml11.png HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 253
+Request: GET http://marybell.honobono.cc/wb_hima.gif HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 929
+Request: GET http://marybell.honobono.cc/images/jp2.gif HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://marybell.honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 329
+no "Content-Length: " detected
+Request: GET http://marybell.honobono.cc/CharisSIL-Regular.woff HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://marybell.honobono.cc/honobono1.css
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 1285
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 4481
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 4224
+soc_readed: 7040
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 4224
+soc_readed: 678
+Request: GET http://marybell.honobono.cc/AndikaNewBasic-B.woff HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://marybell.honobono.cc/honobono1.css
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 7554
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 6300
+Request: GET http://marybell.honobono.cc/AndikaNewBasic-BI.woff HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://marybell.honobono.cc/honobono1.css
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 3587
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 1665
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 212
+Request: GET http://marybell.honobono.cc/CharisSIL-Italic.woff HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://marybell.honobono.cc/honobono1.css
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 7554
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 514
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 7040
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 7040
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 4481
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 7040
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 7040
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 8191
+soc_readed: 4481
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 8191
+soc_readed: 5889
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 4481
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 5889
+soc_readed: 8191
+soc_readed: 5889
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 2498
+Request: GET http://marybell.honobono.cc/CharisSIL-BoldItalic.woff HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://marybell.honobono.cc/honobono1.css
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 7040
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 4738
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 7040
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 7040
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 7040
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 4224
+soc_readed: 2816
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 7040
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 4330
+Request: GET http://marybell.honobono.cc/CharisSIL-Bold.woff HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://marybell.honobono.cc/honobono1.css
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 1408
+soc_readed: 4224
+soc_readed: 5632
+soc_readed: 8191
+soc_readed: 7297
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 8191
+soc_readed: 3073
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 4224
+soc_readed: 1408
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 5632
+soc_readed: 7040
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 2179
+soc_readed: 5632
+soc_readed: 2816
+soc_readed: 7040
+soc_readed: 4224
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 3330
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 6660
+soc_readed: 8191
+soc_readed: 257
+soc_readed: 1408
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 2179
+soc_readed: 2816
+soc_readed: 1408
+soc_readed: 7040
+soc_readed: 2816
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 3330
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 6280
+soc_readed: 8191
+soc_readed: 5889
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 8191
+soc_readed: 5497
+Request: GET http://marybell.honobono.cc/favicon.png HTTP/1.1
+Host: marybell.honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=6
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+soc_readed: 1408
+soc_readed: 1119
+Caught SIGINT
+ ERROR: connection not accepted: Bad file descriptor
+Request: 
