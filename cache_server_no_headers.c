@@ -49,7 +49,7 @@
 
 #define MAXLINE 		10
 
-#define CACHE_DIR       "cachedfiles/"
+#define CACHE_DIR       "cachedfilesnoheader/"
 
 
 // Global Variables
@@ -781,8 +781,8 @@ struct response_info {
 struct socket_descriptors {
     int         client_connection;
     int         server_socket;
-    int      soc_readed;                 // var for storing bytes read from socket on any given read
-    int      soc_written;                // var for storing bytes written to socket on any given write
+    size_t      soc_readed;                 // var for storing bytes read from socket on any given read
+    size_t      soc_written;                // var for storing bytes written to socket on any given write
 };
 
 // reads from server socket and sends response until header end 
@@ -835,6 +835,12 @@ int handle_response_header(struct socket_descriptors* sd, char* net_buff, char* 
             ri->responseCodeFound = 1;
         }
 
+        // if we don't want to send non-200 requests -> break (assume code is found on first read)
+        if(onlySendIf200 && !ri->found200) {
+            ri->responseDone = 1;
+            return 0;
+        }
+
 
         // Try to find "Content-Length"
         if(!ri->foundConLen) {            
@@ -868,22 +874,17 @@ int handle_response_header(struct socket_descriptors* sd, char* net_buff, char* 
             return EXIT_FAILURE;
         }
         
-        // if we don't want to send non-200 requests -> don't
-        if(!onlySendIf200 || !ri->found200) {
-            // --------------------- Send response to client -----------------
-            // send response from server
-            sd->soc_written = write(sd->client_connection, net_buff, sd->soc_readed);
-            if (sd->soc_written < 0) {
-                perror("Error writing to client socket\n");
-                ri->writeError = 1;
-                ri->error = 1;
-                ri->responseDone = 1;
-                return -1;
-            }
-            // printf("%d written to client\n", sd->soc_written);    
-
-            fprintf(stderr, "Wrote resposne header to modified get!\n");
+        // --------------------- Send response to client -----------------
+        // send response from server
+        sd->soc_written = write(sd->client_connection, net_buff, sd->soc_readed);
+        if (sd->soc_written < 0) {
+            perror("Error writing to client socket\n");
+            ri->writeError = 1;
+            ri->error = 1;
+            ri->responseDone = 1;
+            return -1;
         }
+        // printf("%lu written to client\n", sd->soc_written);
 
     } while(!ri->foundHeaderEnd);
 
@@ -948,8 +949,11 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
         else {
             fprintf(stderr, "CREATED/OPENED %s IN wb MODE\n", filepath);
 
+            // only write content
+            
+
             // write bytes read from server to fptr
-            if(fwrite(net_buff, 1, sd->soc_readed, fptr) != sd->soc_readed) {
+            if(fwrite(net_buff, 1, sd->soc_readed - sd->bytesToHeaderEnd, fptr) != sd->soc_readed) {
                 perror("fwrite() error1 in forward_response_with_cache_option");
                 ri->error = 1;
                 ri->fileError = 1;
@@ -965,7 +969,7 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
             }
         }
 
-        // this was unneccesary it's probably better to write the resposne header to the file
+        // this was unneccesary it's better to write the resposne header to the file
         // // write content after header to cache
         // char* startOfContent = net_buff + ri->bytesToHeaderEnd;
         // size_t endOfHeaderToEndOfBuffer = sizeof(net_buff) - ri->bytesToHeaderEnd;
@@ -1009,7 +1013,7 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
             break;
         }  
 
-        // printf("%d read from server\n", sd->soc_readed);
+        // printf("%lu read from server\n", sd->soc_readed);
         ri->total_response_read += sd->soc_readed;
 
         // --------------------- Send response to client -----------------
@@ -1021,7 +1025,7 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
             ri->writeError = 1;
             return -1;
         }
-        // printf("%d written to client\n", sd->soc_written);
+        // printf("%lu written to client\n", sd->soc_written);
 
         // keep track of content read after header
         ri->content_readed += sd->soc_readed;
@@ -1069,9 +1073,9 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
         // If Content-Length 
         //  -> keep track of bytes after header
         else {
-            // printf("hi %d\n", content_readed);
+            // printf("hi %lu\n", content_readed);
 
-            // printf("contentreaded: %d\n", content_readed);
+            // printf("contentreaded: %lu\n", content_readed);
 
             // if we read all the content we need to -> last loop
             if(ri->content_readed >= ri->contentLength) {
@@ -1149,7 +1153,7 @@ int only_read_response_after_header(struct socket_descriptors* sd, char* net_buf
             break;
         }  
 
-        // printf("%d read from server\n", sd->soc_readed);
+        // printf("%lu read from server\n", sd->soc_readed);
         ri->total_response_read += sd->soc_readed;
 
 
@@ -1166,9 +1170,9 @@ int only_read_response_after_header(struct socket_descriptors* sd, char* net_buf
         // If Content-Length 
         //  -> keep track of bytes after header
         else {
-            // printf("hi %d\n", content_readed);
+            // printf("hi %lu\n", content_readed);
 
-            // printf("contentreaded: %d\n", content_readed);
+            // printf("contentreaded: %lu\n", content_readed);
 
             // if we read all the content we need to -> last loop
             if(ri->content_readed >= ri->contentLength) {
@@ -1474,7 +1478,7 @@ void *handle_connection(void *pclient_connection) {
     }
     
     
-    //printf("Wrote %d chars to server connection\n\n", soc_written);
+    //printf("Wrote %lu chars to server connection\n\n", soc_written);
 
 
     // printf("Response Total Length: %lu\n", ri->total_response_read);
