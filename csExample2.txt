@@ -1,0 +1,2517 @@
+Listening...
+If-Mod Req honobono.cc:
+GET http://honobono.cc/ HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 05:09:06 GMT
+
+
+If-Mod Res honobono.cc:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: application/xhtml+xml; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Last-Modified: Sun, 22 Sep 2024 15:14:04 GMT
+Content-Security-Policy: frame-ancestors 'none'; default-src 'self'; style-src 'self' 'unsafe-inline'
+Referrer-Policy: no-referrer
+
+
+Sent Cached Entry in cachedfiles/honobono.cc
+
+If-Mod Req honobono.cc-honobono1.css:
+GET http://honobono.cc/honobono1.css HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=2
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:54 GMT
+
+
+If-Mod Res honobono.cc-honobono1.css:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: text/css
+Content-Length: 7686
+Last-Modified: Sun, 08 Oct 2023 15:44:42 GMT
+Connection: keep-alive
+ETag: "6522ce6a-1e06"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-honobono1.css
+
+If-Mod Req honobono.cc-ruby.css:
+GET http://honobono.cc/ruby.css HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=2
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 05:39:06 GMT
+
+
+If-Mod Res honobono.cc-ruby.css:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: text/css
+Content-Length: 658
+Last-Modified: Fri, 06 Mar 2009 15:30:12 GMT
+Connection: keep-alive
+ETag: "49b14184-292"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-ruby.css
+
+If-Mod Req honobono.cc-smallpic-03.jpg:
+GET http://honobono.cc/smallpic/03.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-smallpic-03.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 4135
+Last-Modified: Tue, 14 Aug 2007 03:40:26 GMT
+Connection: keep-alive
+ETag: "46c1242a-1027"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-03.jpg
+
+If-Mod Req honobono.cc-smallpic-01.jpg:
+GET http://honobono.cc/smallpic/01.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-smallpic-01.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 7789
+Last-Modified: Tue, 14 Aug 2007 03:40:26 GMT
+Connection: keep-alive
+ETag: "46c1242a-1e6d"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-01.jpg
+
+If-Mod Req honobono.cc-images-yukata01.png:
+GET http://honobono.cc/images/yukata01.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-images-yukata01.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 6141
+Last-Modified: Thu, 20 Jun 2019 01:01:51 GMT
+Connection: keep-alive
+ETag: "5d0adaff-17fd"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-yukata01.png
+
+If-Mod Req honobono.cc-images-email_addr.png:
+GET http://honobono.cc/images/email_addr.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-images-email_addr.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 1202
+Last-Modified: Fri, 08 Oct 2021 17:46:14 GMT
+Connection: keep-alive
+ETag: "616083e6-4b2"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-email_addr.png
+
+If-Mod Req honobono.cc-images-valid-xhtml11.png:
+GET http://honobono.cc/images/valid-xhtml11.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-images-valid-xhtml11.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 1413
+Last-Modified: Thu, 09 May 2019 08:14:22 GMT
+Connection: keep-alive
+ETag: "5cd3e15e-585"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-valid-xhtml11.png
+
+If-Mod Req honobono.cc-futahime-images-gyu14m1.jpg:
+GET http://honobono.cc/futahime/images/gyu14m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:16 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu14m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:17 GMT
+Content-Type: image/jpeg
+Content-Length: 22872
+Last-Modified: Sat, 11 Nov 2023 04:33:20 GMT
+Connection: keep-alive
+ETag: "654f0410-5958"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu14m1.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy08m4.jpg:
+GET http://honobono.cc/yokyun/images/yy08m4.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy08m4.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 16181
+Last-Modified: Sat, 20 Jan 2024 02:13:40 GMT
+Connection: keep-alive
+ETag: "65ab2c54-3f35"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy08m4.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy08m3.jpg:
+GET http://honobono.cc/yokyun/images/yy08m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy08m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 27158
+Last-Modified: Sat, 20 Jan 2024 02:13:24 GMT
+Connection: keep-alive
+ETag: "65ab2c44-6a16"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy08m3.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy08m2.jpg:
+GET http://honobono.cc/yokyun/images/yy08m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy08m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 19703
+Last-Modified: Sat, 20 Jan 2024 02:13:06 GMT
+Connection: keep-alive
+ETag: "65ab2c32-4cf7"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy08m2.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy08m1.jpg:
+GET http://honobono.cc/yokyun/images/yy08m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy08m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 20499
+Last-Modified: Sat, 20 Jan 2024 02:12:44 GMT
+Connection: keep-alive
+ETag: "65ab2c1c-5013"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy08m1.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu15m3.jpg:
+GET http://honobono.cc/futahime/images/gyu15m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu15m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 29751
+Last-Modified: Mon, 22 Jul 2024 20:41:44 GMT
+Connection: keep-alive
+ETag: "669ec408-7437"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu15m3.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu15m2.jpg:
+GET http://honobono.cc/futahime/images/gyu15m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu15m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 22415
+Last-Modified: Mon, 22 Jul 2024 20:41:26 GMT
+Connection: keep-alive
+ETag: "669ec3f6-578f"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu15m2.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu15m1.jpg:
+GET http://honobono.cc/futahime/images/gyu15m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu15m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 25397
+Last-Modified: Mon, 22 Jul 2024 20:41:10 GMT
+Connection: keep-alive
+ETag: "669ec3e6-6335"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu15m1.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu13l3_tn.jpg:
+GET http://honobono.cc/futahime/images/gyu13l3_tn.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu13l3_tn.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 6539
+Last-Modified: Sun, 25 Jun 2023 06:52:34 GMT
+Connection: keep-alive
+ETag: "6497e432-198b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu13l3_tn.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu13l1_tn.jpg:
+GET http://honobono.cc/futahime/images/gyu13l1_tn.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu13l1_tn.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 4956
+Last-Modified: Sun, 25 Jun 2023 06:51:02 GMT
+Connection: keep-alive
+ETag: "6497e3d6-135c"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu13l1_tn.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy07l1_tn.jpg:
+GET http://honobono.cc/yokyun/images/yy07l1_tn.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy07l1_tn.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 5649
+Last-Modified: Wed, 23 Aug 2023 19:43:12 GMT
+Connection: keep-alive
+ETag: "64e66150-1611"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy07l1_tn.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu14l1_tn.jpg:
+GET http://honobono.cc/futahime/images/gyu14l1_tn.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:57 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu14l1_tn.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 7028
+Last-Modified: Sat, 11 Nov 2023 04:35:56 GMT
+Connection: keep-alive
+ETag: "654f04ac-1b74"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu14l1_tn.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy08l1_tn.jpg:
+GET http://honobono.cc/yokyun/images/yy08l1_tn.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy08l1_tn.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/jpeg
+Content-Length: 5587
+Last-Modified: Sat, 20 Jan 2024 02:14:54 GMT
+Connection: keep-alive
+ETag: "65ab2c9e-15d3"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy08l1_tn.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu15l1_tn.jpg:
+GET http://honobono.cc/futahime/images/gyu15l1_tn.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu15l1_tn.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/jpeg
+Content-Length: 7592
+Last-Modified: Mon, 22 Jul 2024 20:44:24 GMT
+Connection: keep-alive
+ETag: "669ec4a8-1da8"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu15l1_tn.jpg
+
+If-Mod Req honobono.cc-images-pink_heart.png:
+GET http://honobono.cc/images/pink_heart.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-pink_heart.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/png
+Content-Length: 392
+Last-Modified: Thu, 09 May 2019 08:12:20 GMT
+Connection: keep-alive
+ETag: "5cd3e0e4-188"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-pink_heart.png
+
+If-Mod Req honobono.cc-smallpic-bodsmall.jpg:
+GET http://honobono.cc/smallpic/bodsmall.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-smallpic-bodsmall.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 6210
+Last-Modified: Tue, 14 Aug 2007 03:40:33 GMT
+Connection: keep-alive
+ETag: "46c12431-1842"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-bodsmall.jpg
+
+If-Mod Req honobono.cc-smallpic-yysmall.jpg:
+GET http://honobono.cc/smallpic/yysmall.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-smallpic-yysmall.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 10411
+Last-Modified: Fri, 27 Dec 2019 12:04:36 GMT
+Connection: keep-alive
+ETag: "5e05f354-28ab"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-yysmall.jpg
+
+If-Mod Req honobono.cc-smallpic-fhsmall.jpg:
+GET http://honobono.cc/smallpic/fhsmall.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-smallpic-fhsmall.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 9514
+Last-Modified: Tue, 14 Aug 2007 03:40:33 GMT
+Connection: keep-alive
+ETag: "46c12431-252a"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-fhsmall.jpg
+
+If-Mod Req honobono.cc-smallpic-05.jpg:
+GET http://honobono.cc/smallpic/05.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-smallpic-05.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 5800
+Last-Modified: Tue, 14 Aug 2007 03:40:30 GMT
+Connection: keep-alive
+ETag: "46c1242e-16a8"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-05.jpg
+
+If-Mod Req honobono.cc-smallpic-04.jpg:
+GET http://honobono.cc/smallpic/04.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-smallpic-04.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 7862
+Last-Modified: Tue, 14 Aug 2007 03:40:27 GMT
+Connection: keep-alive
+ETag: "46c1242b-1eb6"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-04.jpg
+
+If-Mod Req honobono.cc-images-files.png:
+GET http://honobono.cc/images/files.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-images-files.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 825
+Last-Modified: Sun, 11 Jan 2009 08:05:00 GMT
+Connection: keep-alive
+ETag: "4969a82c-339"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-files.png
+
+If-Mod Req honobono.cc-images-forums.png:
+GET http://honobono.cc/images/forums.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-images-forums.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 1367
+Last-Modified: Sun, 11 Jan 2009 08:05:01 GMT
+Connection: keep-alive
+ETag: "4969a82d-557"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-forums.png
+
+If-Mod Req honobono.cc-images-dl.png:
+GET http://honobono.cc/images/dl.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-images-dl.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 1606
+Last-Modified: Sun, 11 Jan 2009 08:05:01 GMT
+Connection: keep-alive
+ETag: "4969a82d-646"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-dl.png
+
+If-Mod Req honobono.cc-images-proj.png:
+GET http://honobono.cc/images/proj.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:54 GMT
+
+
+If-Mod Res honobono.cc-images-proj.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 1137
+Last-Modified: Sun, 11 Jan 2009 08:05:01 GMT
+Connection: keep-alive
+ETag: "4969a82d-471"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-proj.png
+
+If-Mod Req honobono.cc-images-honobono-ja.png:
+GET http://honobono.cc/images/honobono-ja.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:54 GMT
+
+
+If-Mod Res honobono.cc-images-honobono-ja.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: image/png
+Content-Length: 641
+Last-Modified: Thu, 09 May 2019 08:10:45 GMT
+Connection: keep-alive
+ETag: "5cd3e085-281"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-honobono-ja.png
+
+If-Mod Req honobono.cc-images-momo.png:
+GET http://honobono.cc/images/momo.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:54 GMT
+
+
+If-Mod Res honobono.cc-images-momo.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: image/png
+Content-Length: 490
+Last-Modified: Thu, 09 May 2019 08:10:41 GMT
+Connection: keep-alive
+ETag: "5cd3e081-1ea"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-momo.png
+
+If-Mod Req honobono.cc-images-yukata02.png:
+GET http://honobono.cc/images/yukata02.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:54 GMT
+
+
+If-Mod Res honobono.cc-images-yukata02.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: image/png
+Content-Length: 6432
+Last-Modified: Thu, 09 May 2019 08:10:44 GMT
+Connection: keep-alive
+ETag: "5cd3e084-1920"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-yukata02.png
+
+Response honobono.cc-AndikaNewBasic-BI.woff (Content Read: 118220):
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:17 GMT
+Content-Type: application/font-woff
+Content-Length: 118220
+Last-Modified: Tue, 25 Apr 2023 04:22:40 GMT
+Connection: keep-alive
+ETag: "64475590-1cdcc"
+Accept-Ranges: bytes
+
+
+
+Response honobono.cc-CharisSIL-Bold.woff (Content Read: 397294):
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:17 GMT
+Content-Type: application/font-woff
+Content-Length: 397294
+Last-Modified: Sun, 09 Apr 2023 22:38:16 GMT
+Connection: keep-alive
+ETag: "64333e58-60fee"
+Accept-Ranges: bytes
+
+
+
+Response honobono.cc-CharisSIL-Italic.woff (Content Read: 427450):
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:18 GMT
+Content-Type: application/font-woff
+Content-Length: 427450
+Last-Modified: Sun, 09 Apr 2023 22:38:09 GMT
+Connection: keep-alive
+ETag: "64333e51-685ba"
+Accept-Ranges: bytes
+
+
+
+Response honobono.cc-AndikaNewBasic-B.woff (Content Read: 115860):
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:18 GMT
+Content-Type: application/font-woff
+Content-Length: 115860
+Last-Modified: Tue, 25 Apr 2023 04:22:59 GMT
+Connection: keep-alive
+ETag: "644755a3-1c494"
+Accept-Ranges: bytes
+
+
+
+Response honobono.cc-CharisSIL-BoldItalic.woff (Content Read: 434914):
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:18 GMT
+Content-Type: application/font-woff
+Content-Length: 434914
+Last-Modified: Sun, 09 Apr 2023 22:38:13 GMT
+Connection: keep-alive
+ETag: "64333e55-6a2e2"
+Accept-Ranges: bytes
+
+
+
+If-Mod Req honobono.cc-w-07wata3.jpg:
+GET http://honobono.cc/w-07wata3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:55 GMT
+
+
+If-Mod Res honobono.cc-w-07wata3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 2019
+Last-Modified: Tue, 14 Aug 2007 03:40:20 GMT
+Connection: keep-alive
+ETag: "46c12424-7e3"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-w-07wata3.jpg
+
+If-Mod Req honobono.cc-images-w_sqy12.png:
+GET http://honobono.cc/images/w_sqy12.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_sqy12.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/png
+Content-Length: 1396
+Last-Modified: Mon, 03 Aug 2020 00:46:11 GMT
+Connection: keep-alive
+ETag: "5f275e53-574"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_sqy12.png
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:19 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-W_flwb01.gif:
+GET http://honobono.cc/W_flwb01.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-W_flwb01.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/gif
+Content-Length: 2434
+Last-Modified: Tue, 14 Aug 2007 03:40:01 GMT
+Connection: keep-alive
+ETag: "46c12411-982"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-W_flwb01.gif
+
+If-Mod Req honobono.cc-images-jp2.gif:
+GET http://honobono.cc/images/jp2.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:31:37 GMT
+
+
+If-Mod Res honobono.cc-images-jp2.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:30:31 GMT
+Content-Type: image/gif
+Content-Length: 179
+Last-Modified: Tue, 14 Aug 2007 03:41:02 GMT
+Connection: keep-alive
+ETag: "46c1244e-b3"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-jp2.gif
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:19 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-futahime-images-gyu14m2.jpg:
+GET http://honobono.cc/futahime/images/gyu14m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:22 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu14m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:22 GMT
+Content-Type: image/jpeg
+Content-Length: 24629
+Last-Modified: Sat, 11 Nov 2023 04:33:50 GMT
+Connection: keep-alive
+ETag: "654f042e-6035"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu14m2.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu14m3.jpg:
+GET http://honobono.cc/futahime/images/gyu14m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:22 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu14m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:22 GMT
+Content-Type: image/jpeg
+Content-Length: 19242
+Last-Modified: Sat, 11 Nov 2023 04:34:06 GMT
+Connection: keep-alive
+ETag: "654f043e-4b2a"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu14m3.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy07m1.jpg:
+GET http://honobono.cc/yokyun/images/yy07m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:22 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy07m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:22 GMT
+Content-Type: image/jpeg
+Content-Length: 18322
+Last-Modified: Wed, 23 Aug 2023 19:40:40 GMT
+Connection: keep-alive
+ETag: "64e660b8-4792"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy07m1.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy07m3.jpg:
+GET http://honobono.cc/yokyun/images/yy07m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy07m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 23410
+Last-Modified: Wed, 23 Aug 2023 19:40:20 GMT
+Connection: keep-alive
+ETag: "64e660a4-5b72"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy07m3.jpg
+
+Response honobono.cc-yokyun-images-yy07-nabeshima.jpg (Content Read: 127849):
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:20 GMT
+Content-Type: image/jpeg
+Content-Length: 127849
+Last-Modified: Tue, 29 Aug 2023 06:36:32 GMT
+Connection: keep-alive
+ETag: "64ed91f0-1f369"
+Accept-Ranges: bytes
+
+
+
+If-Mod Req honobono.cc-futahime-images-gyu13m2.jpg:
+GET http://honobono.cc/futahime/images/gyu13m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:59 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu13m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 27247
+Last-Modified: Sun, 25 Jun 2023 06:49:52 GMT
+Connection: keep-alive
+ETag: "6497e390-6a6f"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu13m2.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu13m4.jpg:
+GET http://honobono.cc/futahime/images/gyu13m4.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu13m4.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 19727
+Last-Modified: Sun, 25 Jun 2023 06:50:40 GMT
+Connection: keep-alive
+ETag: "6497e3c0-4d0f"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu13m4.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy06m2.jpg:
+GET http://honobono.cc/yokyun/images/yy06m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:59 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy06m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 21142
+Last-Modified: Tue, 30 May 2023 06:31:34 GMT
+Connection: keep-alive
+ETag: "64759846-5296"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy06m2.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy06m3.jpg:
+GET http://honobono.cc/yokyun/images/yy06m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy06m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 21971
+Last-Modified: Sun, 18 Jun 2023 21:38:30 GMT
+Connection: keep-alive
+ETag: "648f7956-55d3"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy06m3.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy06-lion.jpg:
+GET http://honobono.cc/yokyun/images/yy06-lion.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:23 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy06-lion.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 37802
+Last-Modified: Mon, 19 Jun 2023 03:46:08 GMT
+Connection: keep-alive
+ETag: "648fcf80-93aa"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy06-lion.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy05m1.jpg:
+GET http://honobono.cc/yokyun/images/yy05m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:23 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy05m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 14378
+Last-Modified: Tue, 09 May 2023 00:17:33 GMT
+Connection: keep-alive
+ETag: "6459911d-382a"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy05m1.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy05m3.jpg:
+GET http://honobono.cc/yokyun/images/yy05m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:23 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy05m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 17138
+Last-Modified: Tue, 09 May 2023 00:17:33 GMT
+Connection: keep-alive
+ETag: "6459911d-42f2"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy05m3.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy04m1.jpg:
+GET http://honobono.cc/yokyun/images/yy04m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:23 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy04m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 27318
+Last-Modified: Thu, 02 Feb 2023 00:38:33 GMT
+Connection: keep-alive
+ETag: "63db0609-6ab6"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy04m1.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy04m3.jpg:
+GET http://honobono.cc/yokyun/images/yy04m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:23 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy04m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 20478
+Last-Modified: Thu, 02 Feb 2023 00:38:38 GMT
+Connection: keep-alive
+ETag: "63db060e-4ffe"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy04m3.jpg
+
+If-Mod Req honobono.cc-images-clip.png:
+GET http://honobono.cc/images/clip.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:23 GMT
+
+
+If-Mod Res honobono.cc-images-clip.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/png
+Content-Length: 2217
+Last-Modified: Tue, 14 Aug 2007 03:40:41 GMT
+Connection: keep-alive
+ETag: "46c12439-8a9"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-clip.png
+
+If-Mod Req honobono.cc-futahime-images-gyu14m4.jpg:
+GET http://honobono.cc/futahime/images/gyu14m4.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:23 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu14m4.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 23932
+Last-Modified: Sat, 11 Nov 2023 04:34:22 GMT
+Connection: keep-alive
+ETag: "654f044e-5d7c"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu14m4.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy07m4.jpg:
+GET http://honobono.cc/yokyun/images/yy07m4.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:59 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy07m4.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 9689
+Last-Modified: Wed, 23 Aug 2023 19:41:14 GMT
+Connection: keep-alive
+ETag: "64e660da-25d9"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy07m4.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu13m1.jpg:
+GET http://honobono.cc/futahime/images/gyu13m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:59 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu13m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 14506
+Last-Modified: Sun, 25 Jun 2023 06:49:32 GMT
+Connection: keep-alive
+ETag: "6497e37c-38aa"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu13m1.jpg
+
+If-Mod Req honobono.cc-futahime-images-gyu13m3.jpg:
+GET http://honobono.cc/futahime/images/gyu13m3.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:59 GMT
+
+
+If-Mod Res honobono.cc-futahime-images-gyu13m3.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 20701
+Last-Modified: Sun, 25 Jun 2023 06:50:20 GMT
+Connection: keep-alive
+ETag: "6497e3ac-50dd"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-futahime-images-gyu13m3.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy06m1.jpg:
+GET http://honobono.cc/yokyun/images/yy06m1.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:59 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy06m1.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 22225
+Last-Modified: Tue, 30 May 2023 06:31:12 GMT
+Connection: keep-alive
+ETag: "64759830-56d1"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy06m1.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy06-karasawa.jpg:
+GET http://honobono.cc/yokyun/images/yy06-karasawa.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:24 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy06-karasawa.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 54334
+Last-Modified: Mon, 26 Jun 2023 06:58:00 GMT
+Connection: keep-alive
+ETag: "649936f8-d43e"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy06-karasawa.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy05m2.jpg:
+GET http://honobono.cc/yokyun/images/yy05m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:24 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy05m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 19629
+Last-Modified: Tue, 09 May 2023 00:17:35 GMT
+Connection: keep-alive
+ETag: "6459911f-4cad"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy05m2.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy04m2.jpg:
+GET http://honobono.cc/yokyun/images/yy04m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:24 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy04m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:25 GMT
+Content-Type: image/jpeg
+Content-Length: 24191
+Last-Modified: Thu, 02 Feb 2023 00:38:37 GMT
+Connection: keep-alive
+ETag: "63db060d-5e7f"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy04m2.jpg
+
+If-Mod Req honobono.cc-smallpic-02.jpg:
+GET http://honobono.cc/smallpic/02.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-smallpic-02.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 7609
+Last-Modified: Tue, 14 Aug 2007 03:40:24 GMT
+Connection: keep-alive
+ETag: "46c12428-1db9"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-smallpic-02.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy07m2.jpg:
+GET http://honobono.cc/yokyun/images/yy07m2.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy07m2.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 22292
+Last-Modified: Wed, 23 Aug 2023 19:39:40 GMT
+Connection: keep-alive
+ETag: "64e6607c-5714"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy07m2.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy06m4.jpg:
+GET http://honobono.cc/yokyun/images/yy06m4.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy06m4.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 20495
+Last-Modified: Tue, 30 May 2023 06:32:04 GMT
+Connection: keep-alive
+ETag: "64759864-500f"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy06m4.jpg
+
+If-Mod Req honobono.cc-yokyun-images-yy05m4.jpg:
+GET http://honobono.cc/yokyun/images/yy05m4.jpg HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=5, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Fri, 27 Sep 2024 04:24:24 GMT
+
+
+If-Mod Res honobono.cc-yokyun-images-yy05m4.jpg:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 18416
+Last-Modified: Tue, 09 May 2023 00:17:33 GMT
+Connection: keep-alive
+ETag: "6459911d-47f0"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-yokyun-images-yy05m4.jpg
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-favicon.png:
+GET http://honobono.cc/favicon.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Priority: u=6
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:41:00 GMT
+
+
+If-Mod Res honobono.cc-favicon.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 2279
+Last-Modified: Sun, 09 Jan 2022 16:39:44 GMT
+Connection: keep-alive
+ETag: "61db0fd0-8e7"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-favicon.png
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+If-Mod Req honobono.cc-images-w_si301.png:
+GET http://honobono.cc/images/w_si301.png HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:56 GMT
+
+
+If-Mod Res honobono.cc-images-w_si301.png:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-images-w_si301.png
+
+If-Mod Req honobono.cc-st11.gif:
+GET http://honobono.cc/st11.gif HTTP/1.1
+Host: honobono.cc
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://honobono.cc/honobono1.css
+Priority: u=4, i
+Pragma: no-cache
+Cache-Control: no-cache
+If-Modified-Since: Thu, 26 Sep 2024 04:40:58 GMT
+
+
+If-Mod Res honobono.cc-st11.gif:
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+
+Sent Cached Entry in cachedfiles/honobono.cc-st11.gif
+
+closed client_socket
+
+93 connections serviced
+Joined thread 0; 
+

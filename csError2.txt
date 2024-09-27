@@ -1,0 +1,1806 @@
+
+
+opened cachedfiles/honobono.cc
+File size: 57200 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: application/xhtml+xml; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Last-Modified: Sun, 22 Sep 2024 15:14:04 GMT
+Content-Security-Policy: frame-ancestors 'none'; default-src 'self'; style-src 'self' 'unsafe-inline'
+Referrer-Policy: no-referrer
+
+header size: 370
+hex_ascii 1f0f, hex_int 7951
+hex string len 4
+bytesToSend 7959
+Gimme something: Success
+bytesToSendEnd 0
+total written: 8329
+hex_ascii ff8, hex_int 4088
+hex string len 3
+bytesToSend 4095
+Gimme something: Success
+bytesToSendEnd 0
+total written: 12424
+hex_ascii 1ff7, hex_int 8183
+hex string len 4
+bytesToSend 8191
+Gimme something: Success
+bytesToSendEnd 0
+total written: 20615
+hex_ascii 2000, hex_int 8192
+hex string len 4
+bytesToSend 8200
+bytesToSend larger than buffer
+Gimme something: Success
+bytesToSend 5
+Gimme something: Success
+bytesToSendEnd 0
+total written: 28815
+hex_ascii 2000, hex_int 8192
+hex string len 4
+bytesToSend 8200
+bytesToSend larger than buffer
+Gimme something: Success
+bytesToSend 5
+Gimme something: Success
+bytesToSendEnd 0
+total written: 37015
+hex_ascii 2000, hex_int 8192
+hex string len 4
+bytesToSend 8200
+bytesToSend larger than buffer
+Gimme something: Success
+bytesToSend 5
+Gimme something: Success
+bytesToSendEnd 0
+total written: 45215
+hex_ascii 1000, hex_int 4096
+hex string len 4
+bytesToSend 4104
+Gimme something: Success
+bytesToSendEnd 0
+total written: 49319
+hex_ascii 1ebc, hex_int 7868
+hex string len 4
+bytesToSend 7876
+Gimme something: Success
+bytesToSendEnd 0
+total written: 57195
+hex_ascii 0, hex_int 0
+hex string len 1
+Last chunk 0
+total_read: 8195, total_written: 57200
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-honobono1.css
+File size: 7934 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: text/css
+Content-Length: 7686
+Last-Modified: Sun, 08 Oct 2023 15:44:42 GMT
+Connection: keep-alive
+ETag: "6522ce6a-1e06"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-honobono1.css
+total_read: 7934, total_written: 7934
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-ruby.css
+File size: 512 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: text/css
+Content-Length: 658
+Last-Modified: Fri, 06 Mar 2009 15:30:12 GMT
+Connection: keep-alive
+ETag: "49b14184-292"
+Accept-Ranges: bytes
+
+header size: 246
+not chunked
+feof cachedfiles/honobono.cc-ruby.css
+total_read: 512, total_written: 512
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-03.jpg
+File size: 4385 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 4135
+Last-Modified: Tue, 14 Aug 2007 03:40:26 GMT
+Connection: keep-alive
+ETag: "46c1242a-1027"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-smallpic-03.jpg
+total_read: 4385, total_written: 4385
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-01.jpg
+File size: 8039 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 7789
+Last-Modified: Tue, 14 Aug 2007 03:40:26 GMT
+Connection: keep-alive
+ETag: "46c1242a-1e6d"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-smallpic-01.jpg
+total_read: 8039, total_written: 8039
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-yukata01.png
+File size: 6144 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 6141
+Last-Modified: Thu, 20 Jun 2019 01:01:51 GMT
+Connection: keep-alive
+ETag: "5d0adaff-17fd"
+Accept-Ranges: bytes
+
+header size: 249
+not chunked
+feof cachedfiles/honobono.cc-images-yukata01.png
+total_read: 6144, total_written: 6144
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-email_addr.png
+File size: 1450 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 1202
+Last-Modified: Fri, 08 Oct 2021 17:46:14 GMT
+Connection: keep-alive
+ETag: "616083e6-4b2"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-images-email_addr.png
+total_read: 1450, total_written: 1450
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-valid-xhtml11.png
+File size: 1661 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 1413
+Last-Modified: Thu, 09 May 2019 08:14:22 GMT
+Connection: keep-alive
+ETag: "5cd3e15e-585"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-images-valid-xhtml11.png
+total_read: 1661, total_written: 1661
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu14m1.jpg
+File size: 23123 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:17 GMT
+Content-Type: image/jpeg
+Content-Length: 22872
+Last-Modified: Sat, 11 Nov 2023 04:33:20 GMT
+Connection: keep-alive
+ETag: "654f0410-5958"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 6733, soc_written 6733, feof cachedfiles/honobono.cc-futahime-images-gyu14m1.jpg
+total_read: 23123, total_written: 23123
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy08m4.jpg
+File size: 16432 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 16181
+Last-Modified: Sat, 20 Jan 2024 02:13:40 GMT
+Connection: keep-alive
+ETag: "65ab2c54-3f35"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 42, soc_written 42, feof cachedfiles/honobono.cc-yokyun-images-yy08m4.jpg
+total_read: 16432, total_written: 16432
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy08m3.jpg
+File size: 27409 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 27158
+Last-Modified: Sat, 20 Jan 2024 02:13:24 GMT
+Connection: keep-alive
+ETag: "65ab2c44-6a16"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 2824, soc_written 2824, feof cachedfiles/honobono.cc-yokyun-images-yy08m3.jpg
+total_read: 27409, total_written: 27409
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy08m2.jpg
+File size: 19954 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 19703
+Last-Modified: Sat, 20 Jan 2024 02:13:06 GMT
+Connection: keep-alive
+ETag: "65ab2c32-4cf7"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 3564, soc_written 3564, feof cachedfiles/honobono.cc-yokyun-images-yy08m2.jpg
+total_read: 19954, total_written: 19954
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy08m1.jpg
+File size: 20750 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 20499
+Last-Modified: Sat, 20 Jan 2024 02:12:44 GMT
+Connection: keep-alive
+ETag: "65ab2c1c-5013"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 4360, soc_written 4360, feof cachedfiles/honobono.cc-yokyun-images-yy08m1.jpg
+total_read: 20750, total_written: 20750
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu15m3.jpg
+File size: 30002 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 29751
+Last-Modified: Mon, 22 Jul 2024 20:41:44 GMT
+Connection: keep-alive
+ETag: "669ec408-7437"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 5417, soc_written 5417, feof cachedfiles/honobono.cc-futahime-images-gyu15m3.jpg
+total_read: 30002, total_written: 30002
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu15m2.jpg
+File size: 22666 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 22415
+Last-Modified: Mon, 22 Jul 2024 20:41:26 GMT
+Connection: keep-alive
+ETag: "669ec3f6-578f"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 6276, soc_written 6276, feof cachedfiles/honobono.cc-futahime-images-gyu15m2.jpg
+total_read: 22666, total_written: 22666
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu15m1.jpg
+File size: 25648 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 25397
+Last-Modified: Mon, 22 Jul 2024 20:41:10 GMT
+Connection: keep-alive
+ETag: "669ec3e6-6335"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 1063, soc_written 1063, feof cachedfiles/honobono.cc-futahime-images-gyu15m1.jpg
+total_read: 25648, total_written: 25648
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu13l3_tn.jpg
+File size: 6789 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 6539
+Last-Modified: Sun, 25 Jun 2023 06:52:34 GMT
+Connection: keep-alive
+ETag: "6497e432-198b"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-futahime-images-gyu13l3_tn.jpg
+total_read: 6789, total_written: 6789
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu13l1_tn.jpg
+File size: 5206 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 4956
+Last-Modified: Sun, 25 Jun 2023 06:51:02 GMT
+Connection: keep-alive
+ETag: "6497e3d6-135c"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-futahime-images-gyu13l1_tn.jpg
+total_read: 5206, total_written: 5206
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy07l1_tn.jpg
+File size: 5899 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 5649
+Last-Modified: Wed, 23 Aug 2023 19:43:12 GMT
+Connection: keep-alive
+ETag: "64e66150-1611"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-yokyun-images-yy07l1_tn.jpg
+total_read: 5899, total_written: 5899
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu14l1_tn.jpg
+File size: 7278 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:57 GMT
+Content-Type: image/jpeg
+Content-Length: 7028
+Last-Modified: Sat, 11 Nov 2023 04:35:56 GMT
+Connection: keep-alive
+ETag: "654f04ac-1b74"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-futahime-images-gyu14l1_tn.jpg
+total_read: 7278, total_written: 7278
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy08l1_tn.jpg
+File size: 5837 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/jpeg
+Content-Length: 5587
+Last-Modified: Sat, 20 Jan 2024 02:14:54 GMT
+Connection: keep-alive
+ETag: "65ab2c9e-15d3"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-yokyun-images-yy08l1_tn.jpg
+total_read: 5837, total_written: 5837
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu15l1_tn.jpg
+File size: 7842 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/jpeg
+Content-Length: 7592
+Last-Modified: Mon, 22 Jul 2024 20:44:24 GMT
+Connection: keep-alive
+ETag: "669ec4a8-1da8"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-futahime-images-gyu15l1_tn.jpg
+total_read: 7842, total_written: 7842
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-pink_heart.png
+File size: 512 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/png
+Content-Length: 392
+Last-Modified: Thu, 09 May 2019 08:12:20 GMT
+Connection: keep-alive
+ETag: "5cd3e0e4-188"
+Accept-Ranges: bytes
+
+header size: 247
+not chunked
+feof cachedfiles/honobono.cc-images-pink_heart.png
+total_read: 512, total_written: 512
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-bodsmall.jpg
+File size: 6460 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 6210
+Last-Modified: Tue, 14 Aug 2007 03:40:33 GMT
+Connection: keep-alive
+ETag: "46c12431-1842"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-smallpic-bodsmall.jpg
+total_read: 6460, total_written: 6460
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-yysmall.jpg
+File size: 10662 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 10411
+Last-Modified: Fri, 27 Dec 2019 12:04:36 GMT
+Connection: keep-alive
+ETag: "5e05f354-28ab"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 2467, soc_written 2467, feof cachedfiles/honobono.cc-smallpic-yysmall.jpg
+total_read: 10662, total_written: 10662
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-fhsmall.jpg
+File size: 9764 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 9514
+Last-Modified: Tue, 14 Aug 2007 03:40:33 GMT
+Connection: keep-alive
+ETag: "46c12431-252a"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+file readed 1569, soc_written 1569, feof cachedfiles/honobono.cc-smallpic-fhsmall.jpg
+total_read: 9764, total_written: 9764
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-05.jpg
+File size: 6050 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 5800
+Last-Modified: Tue, 14 Aug 2007 03:40:30 GMT
+Connection: keep-alive
+ETag: "46c1242e-16a8"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-smallpic-05.jpg
+total_read: 6050, total_written: 6050
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-04.jpg
+File size: 8112 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 7862
+Last-Modified: Tue, 14 Aug 2007 03:40:27 GMT
+Connection: keep-alive
+ETag: "46c1242b-1eb6"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-smallpic-04.jpg
+total_read: 8112, total_written: 8112
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-files.png
+File size: 1024 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 825
+Last-Modified: Sun, 11 Jan 2009 08:05:00 GMT
+Connection: keep-alive
+ETag: "4969a82c-339"
+Accept-Ranges: bytes
+
+header size: 247
+not chunked
+feof cachedfiles/honobono.cc-images-files.png
+total_read: 1024, total_written: 1024
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-forums.png
+File size: 1615 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 1367
+Last-Modified: Sun, 11 Jan 2009 08:05:01 GMT
+Connection: keep-alive
+ETag: "4969a82d-557"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-images-forums.png
+total_read: 1615, total_written: 1615
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-dl.png
+File size: 1854 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 1606
+Last-Modified: Sun, 11 Jan 2009 08:05:01 GMT
+Connection: keep-alive
+ETag: "4969a82d-646"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-images-dl.png
+total_read: 1854, total_written: 1854
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-proj.png
+File size: 1024 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/png
+Content-Length: 1137
+Last-Modified: Sun, 11 Jan 2009 08:05:01 GMT
+Connection: keep-alive
+ETag: "4969a82d-471"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-images-proj.png
+total_read: 1024, total_written: 1024
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-honobono-ja.png
+File size: 512 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: image/png
+Content-Length: 641
+Last-Modified: Thu, 09 May 2019 08:10:45 GMT
+Connection: keep-alive
+ETag: "5cd3e085-281"
+Accept-Ranges: bytes
+
+header size: 247
+not chunked
+feof cachedfiles/honobono.cc-images-honobono-ja.png
+total_read: 512, total_written: 512
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-momo.png
+File size: 512 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: image/png
+Content-Length: 490
+Last-Modified: Thu, 09 May 2019 08:10:41 GMT
+Connection: keep-alive
+ETag: "5cd3e081-1ea"
+Accept-Ranges: bytes
+
+header size: 247
+not chunked
+feof cachedfiles/honobono.cc-images-momo.png
+total_read: 512, total_written: 512
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-yukata02.png
+File size: 6681 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:54 GMT
+Content-Type: image/png
+Content-Length: 6432
+Last-Modified: Thu, 09 May 2019 08:10:44 GMT
+Connection: keep-alive
+ETag: "5cd3e084-1920"
+Accept-Ranges: bytes
+
+header size: 249
+not chunked
+feof cachedfiles/honobono.cc-images-yukata02.png
+total_read: 6681, total_written: 6681
+file done?: Success
+Wrote resposne header to modified get!
+Wrote resposne header to modified get!
+Wrote resposne header to modified get!
+Wrote resposne header to modified get!
+Wrote resposne header to modified get!
+
+
+opened cachedfiles/honobono.cc-w-07wata3.jpg
+File size: 2268 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:55 GMT
+Content-Type: image/jpeg
+Content-Length: 2019
+Last-Modified: Tue, 14 Aug 2007 03:40:20 GMT
+Connection: keep-alive
+ETag: "46c12424-7e3"
+Accept-Ranges: bytes
+
+header size: 249
+not chunked
+feof cachedfiles/honobono.cc-w-07wata3.jpg
+total_read: 2268, total_written: 2268
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_sqy12.png
+File size: 1644 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/png
+Content-Length: 1396
+Last-Modified: Mon, 03 Aug 2020 00:46:11 GMT
+Connection: keep-alive
+ETag: "5f275e53-574"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-images-w_sqy12.png
+total_read: 1644, total_written: 1644
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:19 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-W_flwb01.gif
+File size: 2682 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:56 GMT
+Content-Type: image/gif
+Content-Length: 2434
+Last-Modified: Tue, 14 Aug 2007 03:40:01 GMT
+Connection: keep-alive
+ETag: "46c12411-982"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-W_flwb01.gif
+total_read: 2682, total_written: 2682
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-jp2.gif
+File size: 425 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:30:31 GMT
+Content-Type: image/gif
+Content-Length: 179
+Last-Modified: Tue, 14 Aug 2007 03:41:02 GMT
+Connection: keep-alive
+ETag: "46c1244e-b3"
+Accept-Ranges: bytes
+
+header size: 246
+not chunked
+feof cachedfiles/honobono.cc-images-jp2.gif
+total_read: 425, total_written: 425
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:19 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu14m2.jpg
+File size: 24880 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:22 GMT
+Content-Type: image/jpeg
+Content-Length: 24629
+Last-Modified: Sat, 11 Nov 2023 04:33:50 GMT
+Connection: keep-alive
+ETag: "654f042e-6035"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 295, soc_written 295, feof cachedfiles/honobono.cc-futahime-images-gyu14m2.jpg
+total_read: 24880, total_written: 24880
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu14m3.jpg
+File size: 19493 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:22 GMT
+Content-Type: image/jpeg
+Content-Length: 19242
+Last-Modified: Sat, 11 Nov 2023 04:34:06 GMT
+Connection: keep-alive
+ETag: "654f043e-4b2a"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 3103, soc_written 3103, feof cachedfiles/honobono.cc-futahime-images-gyu14m3.jpg
+total_read: 19493, total_written: 19493
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy07m1.jpg
+File size: 18573 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:22 GMT
+Content-Type: image/jpeg
+Content-Length: 18322
+Last-Modified: Wed, 23 Aug 2023 19:40:40 GMT
+Connection: keep-alive
+ETag: "64e660b8-4792"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 2183, soc_written 2183, feof cachedfiles/honobono.cc-yokyun-images-yy07m1.jpg
+total_read: 18573, total_written: 18573
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy07m3.jpg
+File size: 23661 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 23410
+Last-Modified: Wed, 23 Aug 2023 19:40:20 GMT
+Connection: keep-alive
+ETag: "64e660a4-5b72"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 7271, soc_written 7271, feof cachedfiles/honobono.cc-yokyun-images-yy07m3.jpg
+total_read: 23661, total_written: 23661
+file done?: Success
+Wrote resposne header to modified get!
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu13m2.jpg
+File size: 27498 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 27247
+Last-Modified: Sun, 25 Jun 2023 06:49:52 GMT
+Connection: keep-alive
+ETag: "6497e390-6a6f"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 2913, soc_written 2913, feof cachedfiles/honobono.cc-futahime-images-gyu13m2.jpg
+total_read: 27498, total_written: 27498
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu13m4.jpg
+File size: 19978 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 19727
+Last-Modified: Sun, 25 Jun 2023 06:50:40 GMT
+Connection: keep-alive
+ETag: "6497e3c0-4d0f"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 3588, soc_written 3588, feof cachedfiles/honobono.cc-futahime-images-gyu13m4.jpg
+total_read: 19978, total_written: 19978
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy06m2.jpg
+File size: 21393 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 21142
+Last-Modified: Tue, 30 May 2023 06:31:34 GMT
+Connection: keep-alive
+ETag: "64759846-5296"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 5003, soc_written 5003, feof cachedfiles/honobono.cc-yokyun-images-yy06m2.jpg
+total_read: 21393, total_written: 21393
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy06m3.jpg
+File size: 22222 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 21971
+Last-Modified: Sun, 18 Jun 2023 21:38:30 GMT
+Connection: keep-alive
+ETag: "648f7956-55d3"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 5832, soc_written 5832, feof cachedfiles/honobono.cc-yokyun-images-yy06m3.jpg
+total_read: 22222, total_written: 22222
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy06-lion.jpg
+File size: 38053 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 37802
+Last-Modified: Mon, 19 Jun 2023 03:46:08 GMT
+Connection: keep-alive
+ETag: "648fcf80-93aa"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 5273, soc_written 5273, feof cachedfiles/honobono.cc-yokyun-images-yy06-lion.jpg
+total_read: 38053, total_written: 38053
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy05m1.jpg
+File size: 14629 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 14378
+Last-Modified: Tue, 09 May 2023 00:17:33 GMT
+Connection: keep-alive
+ETag: "6459911d-382a"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 6434, soc_written 6434, feof cachedfiles/honobono.cc-yokyun-images-yy05m1.jpg
+total_read: 14629, total_written: 14629
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy05m3.jpg
+File size: 17389 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 17138
+Last-Modified: Tue, 09 May 2023 00:17:33 GMT
+Connection: keep-alive
+ETag: "6459911d-42f2"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 999, soc_written 999, feof cachedfiles/honobono.cc-yokyun-images-yy05m3.jpg
+total_read: 17389, total_written: 17389
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy04m1.jpg
+File size: 27569 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 27318
+Last-Modified: Thu, 02 Feb 2023 00:38:33 GMT
+Connection: keep-alive
+ETag: "63db0609-6ab6"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 2984, soc_written 2984, feof cachedfiles/honobono.cc-yokyun-images-yy04m1.jpg
+total_read: 27569, total_written: 27569
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy04m3.jpg
+File size: 20729 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/jpeg
+Content-Length: 20478
+Last-Modified: Thu, 02 Feb 2023 00:38:38 GMT
+Connection: keep-alive
+ETag: "63db060e-4ffe"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 4339, soc_written 4339, feof cachedfiles/honobono.cc-yokyun-images-yy04m3.jpg
+total_read: 20729, total_written: 20729
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-clip.png
+File size: 2465 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:23 GMT
+Content-Type: image/png
+Content-Length: 2217
+Last-Modified: Tue, 14 Aug 2007 03:40:41 GMT
+Connection: keep-alive
+ETag: "46c12439-8a9"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-images-clip.png
+total_read: 2465, total_written: 2465
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu14m4.jpg
+File size: 24183 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 23932
+Last-Modified: Sat, 11 Nov 2023 04:34:22 GMT
+Connection: keep-alive
+ETag: "654f044e-5d7c"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 7793, soc_written 7793, feof cachedfiles/honobono.cc-futahime-images-gyu14m4.jpg
+total_read: 24183, total_written: 24183
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy07m4.jpg
+File size: 9939 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 9689
+Last-Modified: Wed, 23 Aug 2023 19:41:14 GMT
+Connection: keep-alive
+ETag: "64e660da-25d9"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+file readed 1744, soc_written 1744, feof cachedfiles/honobono.cc-yokyun-images-yy07m4.jpg
+total_read: 9939, total_written: 9939
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu13m1.jpg
+File size: 14757 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 14506
+Last-Modified: Sun, 25 Jun 2023 06:49:32 GMT
+Connection: keep-alive
+ETag: "6497e37c-38aa"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 6562, soc_written 6562, feof cachedfiles/honobono.cc-futahime-images-gyu13m1.jpg
+total_read: 14757, total_written: 14757
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-futahime-images-gyu13m3.jpg
+File size: 20952 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 20701
+Last-Modified: Sun, 25 Jun 2023 06:50:20 GMT
+Connection: keep-alive
+ETag: "6497e3ac-50dd"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 4562, soc_written 4562, feof cachedfiles/honobono.cc-futahime-images-gyu13m3.jpg
+total_read: 20952, total_written: 20952
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy06m1.jpg
+File size: 22476 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:59 GMT
+Content-Type: image/jpeg
+Content-Length: 22225
+Last-Modified: Tue, 30 May 2023 06:31:12 GMT
+Connection: keep-alive
+ETag: "64759830-56d1"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 6086, soc_written 6086, feof cachedfiles/honobono.cc-yokyun-images-yy06m1.jpg
+total_read: 22476, total_written: 22476
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy06-karasawa.jpg
+File size: 54585 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 54334
+Last-Modified: Mon, 26 Jun 2023 06:58:00 GMT
+Connection: keep-alive
+ETag: "649936f8-d43e"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 8195, soc_written 8195, file readed 5415, soc_written 5415, feof cachedfiles/honobono.cc-yokyun-images-yy06-karasawa.jpg
+total_read: 54585, total_written: 54585
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy05m2.jpg
+File size: 19880 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 19629
+Last-Modified: Tue, 09 May 2023 00:17:35 GMT
+Connection: keep-alive
+ETag: "6459911f-4cad"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 3490, soc_written 3490, feof cachedfiles/honobono.cc-yokyun-images-yy05m2.jpg
+total_read: 19880, total_written: 19880
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy04m2.jpg
+File size: 24442 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:25 GMT
+Content-Type: image/jpeg
+Content-Length: 24191
+Last-Modified: Thu, 02 Feb 2023 00:38:37 GMT
+Connection: keep-alive
+ETag: "63db060d-5e7f"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 8052, soc_written 8052, feof cachedfiles/honobono.cc-yokyun-images-yy04m2.jpg
+total_read: 24442, total_written: 24442
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-smallpic-02.jpg
+File size: 7859 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 7609
+Last-Modified: Tue, 14 Aug 2007 03:40:24 GMT
+Connection: keep-alive
+ETag: "46c12428-1db9"
+Accept-Ranges: bytes
+
+header size: 250
+not chunked
+feof cachedfiles/honobono.cc-smallpic-02.jpg
+total_read: 7859, total_written: 7859
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy07m2.jpg
+File size: 22543 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:40:58 GMT
+Content-Type: image/jpeg
+Content-Length: 22292
+Last-Modified: Wed, 23 Aug 2023 19:39:40 GMT
+Connection: keep-alive
+ETag: "64e6607c-5714"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 6153, soc_written 6153, feof cachedfiles/honobono.cc-yokyun-images-yy07m2.jpg
+total_read: 22543, total_written: 22543
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy06m4.jpg
+File size: 20746 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/jpeg
+Content-Length: 20495
+Last-Modified: Tue, 30 May 2023 06:32:04 GMT
+Connection: keep-alive
+ETag: "64759864-500f"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 4356, soc_written 4356, feof cachedfiles/honobono.cc-yokyun-images-yy06m4.jpg
+total_read: 20746, total_written: 20746
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-yokyun-images-yy05m4.jpg
+File size: 18667 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:24:24 GMT
+Content-Type: image/jpeg
+Content-Length: 18416
+Last-Modified: Tue, 09 May 2023 00:17:33 GMT
+Connection: keep-alive
+ETag: "6459911d-47f0"
+Accept-Ranges: bytes
+
+header size: 251
+not chunked
+file readed 8195, soc_written 8195, file readed 2277, soc_written 2277, feof cachedfiles/honobono.cc-yokyun-images-yy05m4.jpg
+total_read: 18667, total_written: 18667
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-favicon.png
+File size: 2527 bytes
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 26 Sep 2024 04:41:00 GMT
+Content-Type: image/png
+Content-Length: 2279
+Last-Modified: Sun, 09 Jan 2022 16:39:44 GMT
+Connection: keep-alive
+ETag: "61db0fd0-8e7"
+Accept-Ranges: bytes
+
+header size: 248
+not chunked
+feof cachedfiles/honobono.cc-favicon.png
+total_read: 2527, total_written: 2527
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:23 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-images-w_si301.png
+File size: 0 bytes
+feof cachedfiles/honobono.cc-images-w_si301.png
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/png
+Content-Length: 107
+Last-Modified: Tue, 14 Aug 2007 03:41:44 GMT
+Connection: keep-alive
+ETag: "46c12478-6b"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-images-w_si301.png
+total_read: 0, total_written: 0
+file done?: Success
+
+
+opened cachedfiles/honobono.cc-st11.gif
+File size: 0 bytes
+feof cachedfiles/honobono.cc-st11.gif
+response header 
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 27 Sep 2024 04:32:24 GMT
+Content-Type: image/gif
+Content-Length: 151
+Last-Modified: Sun, 28 Jul 2019 04:55:48 GMT
+Connection: keep-alive
+ETag: "5d3d2ad4-97"
+Accept-Ranges: bytes
+
+header size: 0
+not chunked
+feof cachedfiles/honobono.cc-st11.gif
+total_read: 0, total_written: 0
+file done?: Success
+Caught SIGINT
+ Connection not accepted: Interrupted system call
