@@ -5,7 +5,10 @@
 // there are cases when servers do not respond to the If-Modified-Since Header. To ensure expected behavior we will check the response header for "Last-Modified" and compare them ourselves
 // make sure strstr is only called on buffers with a null termination. or you could switch to strnstr(a, b, sizeof(a))
 
-#define _XOPEN_SOURCE 700   // for strptime
+#define _XOPEN_SOURCE 700   // for strptime (Integer value indicating version of the X/Open Portability Guide to which the implementation conforms.)
+
+#include "server.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,67 +16,36 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <unistd.h>
+#include <unistd.h> //defines miscellaneous symbolic constants and types, and declares miscellaneous functions.
 #include <netdb.h>
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h> // to get file size
-#include <pthread.h>
+
 
 #include <sys/stat.h>
 #include <time.h>
 #include <dirent.h>
 
-#include <fcntl.h>
+#include <fcntl.h> // manipulate file descriptor
 
+#define CACHE_DIR       "cachedfiles/"
+#define FILEPATH_MAX    500
 
+#define CACHED_FILE_SIZE_MAX 102400
 
-#define SOCK_READ_BUFF  8192		// Size of the buffer used to store the bytes read over socket (make this big or else bugs)
+#define SOCK_READ_BUFF  8193		// Size of the buffer used to store the bytes read over socket (make this big or else bugs)
 #define FILE_READ_BUFF  8196		// Size of the buffer used to store the bytes read from file
 
-#define REQ_BUFF		8192		// Size of the buffer used to store requests from browser
-#define RES_BUFF      	8192        // Size of the buffer used to store response to/from server
+#define REQ_BUFF		8193		// Size of the buffer used to store requests from browser
+#define RES_BUFF      	8193        // Size of the buffer used to store response to/from server
 #define HOST_BUFF		64			// Buffer size for host name 
 #define CONLEN_BUFF		128			// Buffer size for host name
 #define URL_BUFF        200
 #define GENERAL_BUFF    100
-#define FILEPATH_MAX    500
 #define FIELD_BUFF      100
 
-#define SERVER_BACKLOG  100		    // Number of connections allowed 
-#define THREAD_POOL_LEN 1		    // Number of threads allowed 
-
-
-#define SERVER_PORT		3003		// Port number of server
-#define CLIENT		    80		    // Port number of client
-
 #define MAXLINE 		10
-
-#define CACHE_DIR       "cachedfiles/"
-
-
-// Global Variables
-int volatile    running = 1;
-int             client_socket = 0;  // socket descriptor
-
-
-pthread_t       thread_pool[THREAD_POOL_LEN];   // queue of threads
-                                                // threads are joined after each new connection after the pool is filled
-size_t          connection_count = 0;
-int volatile    threads_used = 0;
-int volatile    thread_index = 0;
-int volatile    queue_index = 0;
-
-
-static void sigintHandler(int sig) {
-    running = 0;
-
-    
-    close(client_socket);
-    
-    printf("closed client_socket\n");
-    write(STDERR_FILENO, "Caught SIGINT\n", 15);
-}
 
 void sanitize_url(char* input) {
     int i;
@@ -88,7 +60,6 @@ void sanitize_url(char* input) {
     }
     return;
 }
-
 
 
 int get_url(char* dest, const char* const request) {
@@ -519,6 +490,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
     
     // Read until Header End
     do{
+        // read file
         memset(file_buff, 0, sizeof(file_buff));
         file_readed = fread(file_buff, 1, sizeof(file_buff) - 1, fptr);
         if (file_readed < 1) {
@@ -534,12 +506,15 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
         }
         total_read += file_readed;
         
+        // check headers
         if(!foundChunkedEncoding) {
             foundChunkedEncoding = is_chunked_encoding(file_buff);
         }
 
+        // check for end of header and header size 
         bytesToHeaderEnd = copy_bytes_to_header_end(file_buff, res_header_buff, &foundHeaderEnd);
 
+        // if we didn't find the end then we write the entire buffer to the client socket
         if(!foundHeaderEnd) {
             headerSize += file_readed;
             // only write if header is bigger than FILE_BUFF and we didn't reach the end in one go (weird edgecase)   
@@ -552,9 +527,11 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
             total_written += soc_written;
             fprintf(stderr, "WARNING: file read weird edge case. response header is bigger than buffer. Probably an error\n");
         }
+        // if we found the end, then don't write, update this headerSize variable that we don't need to use
         else {
             headerSize += bytesToHeaderEnd;
         }
+
     } while(!foundHeaderEnd);
 
     fprintf(stderr, "response header \n%s", res_header_buff);
@@ -565,7 +542,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
         fprintf(stderr, "not chunked\n");
         // write whole file buffer
         soc_written = write(client_connection, file_buff, file_readed);
-        if (soc_written < 0) {
+        if (soc_written < 0 || soc_written != file_readed) {
             perror("Error writing to client socket 2");     // problem area
             fclose(fptr);
             return EXIT_FAILURE;
@@ -573,7 +550,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
         total_written += soc_written;
 
         // read cached response body
-        do{
+        do {
             memset(file_buff, 0, sizeof(file_buff));
             file_readed = fread(file_buff, 1, sizeof(file_buff) - 1, fptr);
             if (file_readed < 1) {
@@ -606,7 +583,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
         } while(file_readed > 0);
 
     }
-    // if it is chunked encoded -> whoo boy TODO: FIGURE THIS OUT
+    // if it is chunked encoded -> whoo boy 
     // https://datatracker.ietf.org/doc/html/rfc9112#section-7.1
     else {
         
@@ -658,7 +635,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
             size_t bytesToSend = hex_string_len + strlen("\r\n");
             // if end of response
             if(hex_int == 0) {
-                bytesToSend += strlen("\r\n");
+                bytesToSend += strlen("\r\n\r\n");
                 fprintf(stderr, "Last chunk 0\n");
                 // send 0CRLFCRLF
                 soc_written = write(client_connection, "0\r\n\r\n", 5);
@@ -671,18 +648,19 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
                 break;
             }
 
-            // // send hex string + CRLF
-            // soc_written = write(client_connection, chunk_size_buff, bytesToSend);
-            // if (soc_written < 0 || soc_written != bytesToSend) {
-            //     perror("Error writing to client socket 6");
-            //     fclose(fptr);
-            //     return EXIT_FAILURE;
-            // }
-            // total_written += soc_written;
-            // fprintf(stderr, "sent <HexString>CRLF \n");
-            // fseek(fptr, bytesToSend, SEEK_CUR);    // skip to after CRLF
+            // send hex string + CRLF
+            soc_written = write(client_connection, chunk_size_buff, bytesToSend);
+            if (soc_written < 0 || soc_written != bytesToSend) {
+                perror("Error writing to client socket 6");
+                fclose(fptr);
+                return EXIT_FAILURE;
+            }
+            total_written += soc_written;
+            fseek(fptr, bytesToSend, SEEK_CUR);    // skip to after CRLF
+            fprintf(stderr, "sent <HexString>CRLF \n");
 
-            bytesToSend += hex_int + strlen("\r\n");
+            // Send chunk
+            bytesToSend = hex_int;
             do {
                 fprintf(stderr, "bytesToSend %lu\n", bytesToSend);
                 size_t readStepSize = (bytesToSend > sizeof(file_buff) - 1) ? sizeof(file_buff) - 1 : bytesToSend;
@@ -717,15 +695,14 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
             } while(bytesToSend > 0);
 
             fprintf(stderr, "bytesToSendEnd %lu\n", bytesToSend);
-            // // send CRLF
-            // soc_written = write(client_connection, "\r\n", strlen("\r\n"));
-            //     if (soc_written < 0) {
-            //         perror("Error writing to client socket 8");     // problem area
-            //         fclose(fptr);
-            //         return EXIT_FAILURE;
-            //     }
-
-            // total_written += soc_written;
+            // send CRLF
+            soc_written = write(client_connection, "\r\n", strlen("\r\n"));
+                if (soc_written < 0) {
+                    perror("Error writing to client socket 8");     // problem area
+                    fclose(fptr);
+                    return EXIT_FAILURE;
+                }
+            total_written += soc_written;
 
             fprintf(stderr, "total written: %lu\n", total_written);
 
@@ -748,42 +725,7 @@ int read_and_send_cached_file(const char* const filepath, char* res_header_buff,
     return 0;
 }
 
-struct response_info {
-    int         foundChunkedEncoding;       // true when chunked encoding found in response header
-    int         foundConLen;            // true when content-length found in response header
-    int         foundHeaderEnd;         // true when end of the response header found in net_buff
-    int         found200;               // true when we found 200 response code
-    int         responseDone;           // true when EOS is found after header OR content_length indicates end of response
-    int         isCacheable;
-    int         responseCodeFound;
-    int         resourceWasNotModified; // 0 = not sure, could be modified; 1 = for sure it was not modified
-    // these don't pertain to the response itself
-    int         error;
-    int         readError;
-    int         writeError;
-    int         fileError;
-    int         readZeroBytes;
 
-    int         cacheUpdated;
-    int         tooLarge;
-
-
-    size_t      bytesToHeaderEnd;       // bytes from the start of net_buff to the end of the header
-
-    size_t      contentLength;          // content length in defined in response header 
-
-    size_t      content_readed;         // number of bytes read after response header
-    size_t      total_response_read;    // number of bytes read from response
-
-    size_t      headerSize;             // header size
-};
-
-struct socket_descriptors {
-    int         client_connection;
-    int         server_socket;
-    int      soc_readed;                 // var for storing bytes read from socket on any given read
-    int      soc_written;                // var for storing bytes written to socket on any given write
-};
 
 // reads from server socket and sends response until header end 
 // keeps track of response code header size, content-length
@@ -934,7 +876,7 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
     // if contentLength is greater than 102,400 bytes (100 KiB) -> don't cache it
     // if cacheable -> cache the response body part of the buffer
     // open file in write bytes mode
-    if(doCache && ri->found200 && !(ri->foundConLen && ri->contentLength > 102400)) {
+    if(doCache && ri->found200 && !(ri->foundConLen && ri->contentLength > CACHED_FILE_SIZE_MAX)) {
         ri->isCacheable = 1;
 
         fptr = fopen(filepath, "wb");
@@ -1027,7 +969,7 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
         ri->content_readed += sd->soc_readed;
 
         // write to cache
-        if(!ri->fileError && ri->isCacheable && ri->content_readed <= 102400) {
+        if(!ri->fileError && ri->isCacheable && ri->content_readed <= CACHED_FILE_SIZE_MAX) {
             if(fwrite(net_buff, sizeof(char), sd->soc_readed, fptr) != sd->soc_readed) {
                 perror("fwrite() error2 in forward_response_with_cache_option()");
                 ri->error = 1;
@@ -1046,7 +988,7 @@ int forward_response_with_cache_option(struct socket_descriptors* sd, char* net_
             }
         }
         // if bytes exceed the limit -> close and remove the file
-        else if(!ri->fileError && ri->isCacheable && ri->content_readed > 102400) {
+        else if(!ri->fileError && ri->isCacheable && ri->content_readed > CACHED_FILE_SIZE_MAX) {
             fprintf(stderr, "FILE SIZE LIMIT REACHED\n");
             fclose(fptr);
             // delete file
@@ -1522,107 +1464,5 @@ void *handle_connection(void *pclient_connection) {
 
 
     return NULL;
-}
-
-
-int main() {
-    // Socket descriptors
-    int        client_connection = 0;           // new connection descriptor
-
-	struct     sockaddr_in client_addr;         // Address format structure
-	// struct hostent *hostentry;
-
-	int         addrlen = sizeof(client_addr);  // size of sockaddr_in structure
-
-    if(signal(SIGINT, sigintHandler) == SIG_ERR) {
-        do {
-            perror("signal SIGINT");
-            exit(EXIT_FAILURE);
-        } while(0);
-    }
-
-    sigaction(SIGPIPE, &(struct sigaction){SIG_IGN}, NULL);
-
-	// Create socket for connecting to client.
-    if ((client_socket = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-        perror("Error: Could not create socket! \n");
-        return -1;
-    }
-    
-    // To prevent "Address in use" error
-    // The SO_REUSEADDR socket option, explicitly allows a process to bind to a port which remains in TIME_WAIT
-    if (setsockopt(client_socket, SOL_SOCKET, SO_REUSEADDR, &(int){1}, sizeof(int)) < 0)
-        perror("setsockopt(SO_REUSEADDR) failed!");
-	
-
-	// bind socket to server address and port
-    // Server Address Initialization
-    int port = SERVER_PORT;
-    client_addr.sin_family = AF_INET;                       // AF_INET since we expect IPv4
-    client_addr.sin_addr.s_addr = inet_addr("127.0.0.1");   // INADDR_ANY -> means any address can connect
-    client_addr.sin_port = htons(port);                     // sets up the port
-
-	// Bind to socket
-    if(bind(client_socket, (struct sockaddr*)&client_addr, sizeof(client_addr)) < 0) {
-        perror("Bind failed!");
-        return -1;
-    }
-    
-    // Accept up to 100 connections
-    if (listen(client_socket, SERVER_BACKLOG) < 0) {
-        perror("Listen failed!");
-        exit(EXIT_FAILURE);
-    }
-
-	
-    printf("Listening...\n");
-
-	while(running) {
-
-		/* --------------- Accept incoming connections -------------------- */
-		client_connection = accept(client_socket, (struct sockaddr*)&client_addr, (socklen_t*)&addrlen);
-		if(client_connection < 0) {
-			perror("Connection not accepted");
-		}
-
-		// printf("Client connection: Accepted! client_connection: %d\n\n", client_connection);
-
-		pthread_t t;
-
-        int *pclient = malloc(sizeof(int));
-        if(pclient == NULL) {
-            running = 0;
-            break;
-        }
-        *pclient = client_connection;
-
-        // handle connection in new thread
-        pthread_create(&t, NULL, handle_connection, pclient);
-        thread_pool[queue_index] = t;
-        queue_index = (queue_index + 1) % THREAD_POOL_LEN;
-
-
-        ++connection_count;
-        if(connection_count >= THREAD_POOL_LEN) {
-            // printf("\nJoining thread %d\n", queue_index);
-            pthread_join(thread_pool[queue_index], NULL);
-        }
-
-	}
-
-    printf("\n%lu connections serviced\n", connection_count);
-    
-    threads_used = (connection_count >= THREAD_POOL_LEN) ? THREAD_POOL_LEN 
-                : connection_count;
-
-    for(int i = 0; i < threads_used; i++) {
-        printf("Joined thread %d; ", i);
-        pthread_join(thread_pool[i], NULL);
-    }
-    printf("\n\n");
-    close (client_socket);
-    
-    
-	return 0;
 }
 
