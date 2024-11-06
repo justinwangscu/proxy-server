@@ -32,16 +32,18 @@ int volatile    thread_index = 0;
 int volatile    queue_index = 0;
 
 static void sigintHandler(int sig) {
-    write(STDERR_FILENO, "Caught SIGINT\n", 15);
     running = 0;
+    
+    //write(STDERR_FILENO, "Caught SIGINT\n", 15);
+    return;
 }
 
 int main() {
     // Socket descriptors
     int         running = 1;
-    int        client_connection = 0;           // new connection descriptor
+    int         client_connection = 0;           // new connection descriptor
 
-	struct     sockaddr_in client_addr;         // Address format structure
+	struct      sockaddr_in client_addr;         // Address format structure
 	// struct hostent *hostentry;
 
 	int         addrlen = sizeof(client_addr);  // size of sockaddr_in structure
@@ -90,7 +92,9 @@ int main() {
     printf("Listening...\n");
 
 	while(running) {
-
+        if(!running) {
+            break;
+        }
 		/* --------------- Accept incoming connections -------------------- */
 		client_connection = accept(client_socket, (struct sockaddr*)&client_addr, (socklen_t*)&addrlen);
 		if(client_connection < 0) {
@@ -133,6 +137,7 @@ int main() {
     }
     printf("\n\n");
     close (client_socket);
+  
     
     
 	return 0;

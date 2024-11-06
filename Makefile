@@ -1,7 +1,7 @@
 CXX			= gcc 
 CXXFLAGS	= -g -Wall -fsanitize=address -pthread
-OBJS		= proxy.o
-PROG		= ps
+OBJS		= server.o main.o
+PROG		= server
 
 all:		$(PROG)
 
