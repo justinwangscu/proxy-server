@@ -6,7 +6,7 @@ An example HTTP Forward Proxy Server that intercepts, parses and forwards HTTP r
 Setup on Windows:
 1. Install WSL (Windows Subsystem for Linux) and a distro - https://learn.microsoft.com/en-us/windows/wsl/install
 2. Open the project directory in WSL. There are many ways to do this such as Shift + Right-clicking on an empty space with the folder open on File Explorer and selecting "Open Linux shell here". You could also navigate to the directory in Powershell or Command Prompt and run: `` wsl ``
-3. Install gcc if not installed and optionally make.
+3. Install gcc if not installed and, optionally, install make.
 
 Setup on Linux:
 1. Install gcc if not installed and, optionally, install make.
